@@ -79,6 +79,11 @@ body, #root {
   border: 1px dotted orange;
   width: auto;
 }
+#yt > div > button {
+  border: none;
+  background-color: orange;
+  padding: 0;
+}
 #yt img {
   width: 320px;
   height: 240px;
@@ -90,7 +95,6 @@ body, #root {
   background-color: gold;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 }
 #lists > h3 {
   align-self: center;
@@ -99,9 +103,9 @@ body, #root {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
 }
-#lists > input {
+#lists input {
   padding: 0.5em;
 }
 button {
@@ -115,4 +119,10 @@ button:hover {
 }
 span.pink {
   color: deeppink;
+}
+
+@media (max-width: 770px) {
+  #lists > form {
+    flex-direction: column;
+  }
 }
