@@ -1,0 +1,86 @@
+/* ===== General ===== */
+body {
+  margin: 0;
+}
+body, #root {
+  /*border: 1px solid black;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Verdana;
+}
+#root {
+  width: 100%;
+  min-width: 400px;
+}
+#root > div {
+  width: 90%;
+  margin-bottom: 30px;
+}
+
+/* ===== Weather ===== */
+#weather {
+  border: 1px solid blue;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+#weather > h1 {
+  border: 1px dotted blue;
+  align-content: flex-start;
+}
+#weather > div {
+  border: 1px dotted blue;
+}
+
+/* ===== Cat Facts ===== */
+#facts {
+  border: 1px solid green;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===== YouTube ===== */
+#yt {
+  border: 1px solid orange;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#yt > div {
+  border: 1px dotted orange;
+  width: auto;
+}
+
+/* ===== Lists ===== */
+#lists {
+  border: 1px solid gold;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+#lists > h3 {
+  align-self: center;
+}
+form {
+  display: flex;
+  flex-direction: row;
+}
+#lists > input {
+  padding: 0.5em;
+}
+button {
+  background-color: #33cc33;
+  color: white;
+  padding: 0.6em;
+  border: none;
+}
+span.pink {
+  color: deeppink;
+}
