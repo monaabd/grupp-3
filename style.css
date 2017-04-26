@@ -1,6 +1,7 @@
 /* ===== General ===== */
 body {
   margin: 0;
+  background-color: yellow;
 }
 body, #root {
   /*border: 1px solid black;*/
@@ -8,6 +9,7 @@ body, #root {
   flex-direction: column;
   align-items: center;
   font-family: Verdana;
+  color: white;
 }
 #root {
   width: 100%;
@@ -17,10 +19,14 @@ body, #root {
   width: 90%;
   margin-bottom: 30px;
 }
-
+#weather, #facts, #yt, #lists {
+  border-radius: 10px;
+  padding: 10px;
+}
 /* ===== Weather ===== */
 #weather {
-  border: 1px solid blue;
+  border: 1px solid lightblue;
+  background-color: lightblue;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -29,14 +35,18 @@ body, #root {
 #weather > h1 {
   border: 1px dotted blue;
   align-content: flex-start;
+  color: white;
+  font-size: 3em;
 }
 #weather > div {
   border: 1px dotted blue;
+  margin-right: 10px;
 }
 
 /* ===== Cat Facts ===== */
 #facts {
   border: 1px solid green;
+  background-color: green;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,6 +55,7 @@ body, #root {
 /* ===== YouTube ===== */
 #yt {
   border: 1px solid orange;
+  background-color: orange;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -57,10 +68,15 @@ body, #root {
   border: 1px dotted orange;
   width: auto;
 }
+#yt img {
+  width: 320px;
+  height: 240px;
+}
 
 /* ===== Lists ===== */
 #lists {
   border: 1px solid gold;
+  background-color: gold;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -68,9 +84,11 @@ body, #root {
 #lists > h3 {
   align-self: center;
 }
-form {
+#lists > form {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 #lists > input {
   padding: 0.5em;
