@@ -23,6 +23,17 @@ body, #root {
   border-radius: 10px;
   padding: 10px;
 }
+/* ===== Admin ===== */
+#admin {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+#admin > button {
+  background-color: gold;
+  width: 2em;
+}
+
 /* ===== Weather ===== */
 #weather {
   border: 1px solid lightblue;
@@ -98,6 +109,9 @@ button {
   color: white;
   padding: 0.6em;
   border: none;
+}
+button:hover {
+  cursor: pointer;
 }
 span.pink {
   color: deeppink;
