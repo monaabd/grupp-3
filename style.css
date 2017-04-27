@@ -31,7 +31,10 @@ body, #root {
 }
 #admin > button {
   background-color: gold;
-  width: 2em;
+  width: auto;
+}
+h3 {
+  align-self: center;
 }
 
 /* ===== Weather ===== */
@@ -44,13 +47,13 @@ body, #root {
   justify-content: space-between;
 }
 #weather > h1 {
-  border: 1px dotted blue;
   align-content: flex-start;
   color: white;
   font-size: 3em;
+  margin: 20px;
 }
 #weather > div {
-  border: 1px dotted blue;
+  border: 1px dotted lightblue;
   margin-right: 10px;
 }
 
@@ -97,7 +100,7 @@ body, #root {
   flex-direction: column;
 }
 #lists > h3 {
-  align-self: center;
+  color: deeppink;
 }
 #lists > form {
   display: flex;
@@ -113,13 +116,16 @@ button {
   color: white;
   padding: 0.6em;
   border: none;
+  margin-right: 5px;
+  margin-top: 5px;
 }
 button:hover {
   cursor: pointer;
 }
-span.pink {
-  color: deeppink;
-}
+
+span.pink {color: deeppink;}
+span.blue {color: blue;}
+span.orange {color: orange;}
 
 @media (max-width: 770px) {
   #lists > form {
