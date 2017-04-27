@@ -8,7 +8,8 @@ body, #root {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: Verdana;
+  font-family: 'Butterfly Kids';
+  font-size: 1.5em;
   color: white;
 }
 #root {
