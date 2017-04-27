@@ -1,7 +1,7 @@
 /* ===== General ===== */
 body {
   margin: 0;
-  background-color: yellow;
+  background-color: hotpink;
 }
 body, #root {
   /*border: 1px solid black;*/
@@ -40,8 +40,8 @@ h3 {
 
 /* ===== Weather ===== */
 #weather {
-  border: 1px solid lightblue;
-  background-color: lightblue;
+  border: 1px solid gold;
+  background-color: gold;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -60,8 +60,8 @@ h3 {
 
 /* ===== Cat Facts ===== */
 #facts {
-  border: 1px solid green;
-  background-color: green;
+  border: 1px solid #61c13c;
+  background-color: #61c13c;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -95,8 +95,8 @@ h3 {
 
 /* ===== Lists ===== */
 #lists {
-  border: 1px solid gold;
-  background-color: gold;
+  border: 1px solid #46b3e2;
+  background-color: #46b3e2;
   display: flex;
   flex-direction: column;
 }
