@@ -31,7 +31,6 @@ class App extends React.Component {
     }).bind(this);
     ajax.send();
     console.log('after');
-
   }
   
 
