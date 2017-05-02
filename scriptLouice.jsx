@@ -56,18 +56,22 @@ class AppAdmin extends React.Component {
       isLoggedIn: false
     };
     this.logIn = this.logIn.bind(this);
-    this.updateLogInStatus = this.updateLogInStatus.bind(this);
   }
   
   logIn(event) {
+    let self = this;
     let provider = new firebase.auth.GithubAuthProvider();
+    
     firebase.auth().signInWithPopup(provider)
     .then(function(result) {
       //om inloggning lyckas
       console.log('logging in...');
       if(result.user.displayName == 'Louice Danielsson') {
-        console.log('sign in ok');
-        updateLogInStatus();
+        console.log('is authorizedddd...?');
+        self.setState({
+          isLoggedIn: true
+        });
+        console.log(self.state.isLoggedIn);
       }
     }).catch( function(error) {
       //om inloggningen misslyckas
@@ -75,18 +79,12 @@ class AppAdmin extends React.Component {
     });
   }
   
-  updateLogInStatus() {
-    console.log('update körs');
-    this.setState({
-      isLoggedIn: true
-    });
-  }
+
   render() {
     return(
       <div>
         <Admin 
-          handleClick={this.logIn} 
-          status={this.updateLogInStatus} />
+          handleClick={this.logIn} />
       </div>
     )
   } 
