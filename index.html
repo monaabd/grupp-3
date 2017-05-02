@@ -10,21 +10,33 @@
     <script src="https://unpkg.com/react@latest/dist/react.js"></script>
     <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-
     <!-- //React -->
     
     <!-- firebase: -->
-    
+    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAs1Wl6Ed1B2E8qrAGdRGVhcnE8isJ8SRk",
+        authDomain: "meow-d393f.firebaseapp.com",
+        databaseURL: "https://meow-d393f.firebaseio.com",
+        projectId: "meow-d393f",
+        storageBucket: "meow-d393f.appspot.com",
+        messagingSenderId: "587383622809"
+      };
+      firebase.initializeApp(config);
+    </script>
     <!-- //firebase -->
   </head>
   
   <body>
     
     <div id="root">
+      <!--
       <div id="admin">
         <button>Admin</button>
       </div>
-      
+      -->
       <div id="weather">
         <h1>Me &amp; Meow</h1>
         <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzIGfh1YoJVUWPzrAN3aQ9WP5jpmsWXGu6LwXHgKXJferTgKry"/></div>
@@ -52,26 +64,6 @@
         </div>
       </div>
       -->
-      <div id="lists">
-        <h3>My Favorite Cats</h3>
-        <form>
-          <input type="text" placeholder="Name">
-          <input type="text" placeholder="Color">
-          <input type="text" placeholder="Breed">
-          <button>Add to list</button>
-        </form>
-        
-        <div id="sortBtns">
-          <button>Sort by Name</button>
-          <button>Sort by Color</button>
-          <button>Sort by Breed</button>
-        </div>
-        <ol>
-          <li>Sixten, <span class="pink">pink</span>, Ragdoll</li>
-          <li>Sotis, <span class="blue">blue</span>, Persian</li>
-          <li>Leo, <span class="orange">orange</span>, Bengal</li>
-        </ol>
-      </div>    
     
     </div>
     

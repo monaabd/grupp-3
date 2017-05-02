@@ -94,39 +94,7 @@ h3 {
 }
 
 /* ===== Lists ===== */
-#lists {
-  border: 1px solid #46b3e2;
-  background-color: #46b3e2;
-  display: flex;
-  flex-direction: column;
-}
-#lists > h3 {
-  color: deeppink;
-}
-#lists > form {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-#lists input {
-  padding: 0.5em;
-}
-button {
-  background-color: #33cc33;
-  color: white;
-  padding: 0.6em;
-  border: none;
-  margin-right: 5px;
-  margin-top: 5px;
-}
-button:hover {
-  cursor: pointer;
-}
 
-span.pink {color: deeppink;}
-span.blue {color: blue;}
-span.orange {color: orange;}
 
 @media (max-width: 770px) {
   #lists > form {
