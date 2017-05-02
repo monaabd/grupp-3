@@ -1,9 +1,7 @@
 /* ===== General ===== */
-body {
+#body {
   margin: 0;
   background-color: hotpink;
-}
-body, #root {
   /*border: 1px solid black;*/
   display: flex;
   flex-direction: column;
@@ -11,31 +9,16 @@ body, #root {
   font-family: 'Butterfly Kids';
   font-size: 1.5em;
   color: white;
-}
-#root {
   width: 100%;
   min-width: 400px;
 }
-#root > div {
+#body > div {
   width: 90%;
   margin-bottom: 30px;
 }
-#weather, #facts, #yt, #lists {
+#weather, #catFactSection, #yt, #lists {
   border-radius: 10px;
   padding: 10px;
-}
-/* ===== Admin ===== */
-#admin {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-}
-#admin > button {
-  background-color: gold;
-  width: auto;
-}
-h3 {
-  align-self: center;
 }
 
 /* ===== Weather ===== */
@@ -54,7 +37,6 @@ h3 {
   margin: 20px;
 }
 #weather > div {
-  border: 1px dotted lightblue;
   margin-right: 10px;
 }
 
@@ -65,6 +47,15 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+#facts > h3 {
+  /*align-self: center;*/
+}
+#facts > button {
+  border: none;
+  padding: 10px;
+  background-color: gold;
+  width: auto;
 }
 
 /* ===== YouTube ===== */
@@ -95,6 +86,17 @@ h3 {
 
 /* ===== Lists ===== */
 
+/* ===== Admin ===== */
+#admin {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+#admin > button {
+  padding: 10px;
+  background-color: gold;
+  width: auto;
+}
 
 @media (max-width: 770px) {
   #lists > form {

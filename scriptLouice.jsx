@@ -1,13 +1,10 @@
-class App extends React.Component {
+class AppFact extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentFact: '',
-      isLoggedIn: false
+      currentFact: ''
     };
     this.showFact = this.showFact.bind(this);
-    this.logIn = this.logIn.bind(this);
-    this.updateLogInStatus = this.updateLogInStatus.bind(this);
   }
 
   showFact(event) {
@@ -28,6 +25,39 @@ class App extends React.Component {
     ajax.send();
     console.log('after');
   } //ajax cat fact
+  
+  render() {
+    return(
+      <div>
+        <CatFact 
+          handleClick={this.showFact} 
+          currentFact={this.state.currentFact} />
+      </div>
+    )
+  } 
+}
+
+class CatFact extends React.Component {
+  render() {
+    return(
+      <div id="facts">
+        <h3>Facts</h3>
+        <button onClick={this.props.handleClick}>Show something else</button>
+        <p>{this.props.currentFact}</p>
+      </div>
+    )
+  }
+}
+
+class AppAdmin extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoggedIn: false
+    };
+    this.logIn = this.logIn.bind(this);
+    this.updateLogInStatus = this.updateLogInStatus.bind(this);
+  }
   
   logIn(event) {
     let provider = new firebase.auth.GithubAuthProvider();
@@ -54,27 +84,12 @@ class App extends React.Component {
   render() {
     return(
       <div>
-        <CatFact 
-          handleClick={this.showFact} 
-          currentFact={this.state.currentFact} />
         <Admin 
           handleClick={this.logIn} 
           status={this.updateLogInStatus} />
       </div>
     )
   } 
-}
-
-class CatFact extends React.Component {
-  render() {
-    return(
-      <div id="facts">
-        <h3>Facts</h3>
-        <button onClick={this.props.handleClick}>Show something else</button>
-        <p>{this.props.currentFact}</p>
-      </div>
-    )
-  }
 }
 
 class Admin extends React.Component {
@@ -88,8 +103,12 @@ class Admin extends React.Component {
 }
 
 
+ReactDOM.render(
+  <AppFact />,
+  document.getElementById('catFactSection')
+);
 
 ReactDOM.render(
-  <App />,
-  document.getElementById('root')
+  <AppAdmin />,
+  document.getElementById('adminSection')
 );
