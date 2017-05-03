@@ -2,7 +2,7 @@ class AppFact extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentFact: ''
+      currentFact: 'On average, a cat will sleep for 16 hours a day.'
     };
     this.showFact = this.showFact.bind(this);
   }

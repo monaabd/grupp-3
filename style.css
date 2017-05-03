@@ -1,12 +1,12 @@
 /* ===== General ===== */
 #body {
   margin: 0;
-  background-color: hotpink;
+  background-image: url(pictures/paws.png);
   /*border: 1px solid black;*/
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: 'Butterfly Kids';
+  font-family: Verdana;
   font-size: 1.5em;
   color: white;
   width: 100%;
@@ -23,6 +23,7 @@
 
 /* ===== Weather ===== */
 #weather {
+  font-family: 'Butterfly Kids';
   border: 1px solid gold;
   background-color: gold;
   display: flex;
