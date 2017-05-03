@@ -22,7 +22,7 @@
 
 /* ===== Weather ===== */
 #weather {
-  font-family: 'Butterfly Kids';
+  /*font-family: 'Butterfly Kids';*/
   border: 1px solid gold;
   background-color: gold;
   display: flex;
@@ -30,7 +30,7 @@
   align-items: center;
   justify-content: space-between;
 }
-#weather > h1 {
+/*#weather > h1 {
   align-content: flex-start;
   color: white;
   font-size: 3em;
@@ -39,6 +39,9 @@
 #weather > div {
   margin-right: 10px;
   padding: 10px;
+}*/
+#weather span {
+  padding: 20px;
 }
 
 /* ===== Cat Facts ===== */
@@ -51,14 +54,14 @@
   padding: 20px;
 }
 #facts > button {
-  border: none;
+  border: 1px solid orange;
   padding: 10px;
   background-color: gold;
   width: auto;
   font-family: 'Love Ya Like A Sister', cursive;
 }
 #facts > p {
-  justify-content: center;
+  text-align: center;
 }
 
 /* ===== YouTube ===== */
@@ -105,7 +108,7 @@
   border: none;
   width: auto;
 }
-#admin > button:hover {
+button:hover {
   cursor: pointer;
 }
 
