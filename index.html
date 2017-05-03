@@ -10,12 +10,17 @@
     <script src="https://unpkg.com/react@latest/dist/react.js"></script>
     <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-
-    <!-- //React -->
+      <link  type="text/css" rel="stylesheet" href="mew.css">
     
     <!-- firebase: -->
+     <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+      <script src="firebase.js"></script>
+    <!-- weather: -->
+     
     
-    <!-- //firebase -->
+    
+      
+   
   </head>
   
   <body>
@@ -52,30 +57,15 @@
         </div>
       </div>
       -->
-      <div id="lists">
-        <h3>My Favorite Cats</h3>
-        <form>
-          <input type="text" placeholder="Name">
-          <input type="text" placeholder="Color">
-          <input type="text" placeholder="Breed">
-          <button>Add to list</button>
-        </form>
         
-        <div id="sortBtns">
-          <button>Sort by Name</button>
-          <button>Sort by Color</button>
-          <button>Sort by Breed</button>
-        </div>
-        <ol>
-          <li>Sixten, <span class="pink">pink</span>, Ragdoll</li>
-          <li>Sotis, <span class="blue">blue</span>, Persian</li>
-          <li>Leo, <span class="orange">orange</span>, Bengal</li>
-        </ol>
-      </div>    
-    
     </div>
-    
+    <div id="catList">
+        
+        
+    </div>   
     <script type="text/babel" src="scriptLouice.jsx"></script>
+      <script type="text/jsx" src="meowMona.jsx"  ></script>
+      <script src="weather.jsx" type="text/jsx"></script>
   </body>
 
 </html>

@@ -15,7 +15,7 @@ class App extends React.Component {
     super(props);
       
     this.state={
-       submitter:null,
+      submitter:null,
       catName: null,
       catColor: null,
       catBreed: null,
@@ -51,18 +51,23 @@ class App extends React.Component {
       this.setState({ catName: el.value });  
     else if (el.placeholder == "Cat Color")
       this.setState({ catColor: el.value }); 
-    else if (el.placeholder == "Breed")
+    else if (el.placeholder == "Cat Breed")
       this.setState({ catBreed: el.value });
       else (el.placeholder == "Add Cat Photo")
       this.setState({ catPhoto: el.value });
 
   }
   render(){
-    return ( <span> <AddCats setCat={this.setCat} buttonClick={this.addNewObject}/>
-             <MyList theList={this.state.cats} />
-             </span>
+    return (  <table className ="table">
+           
+              <AddCats setCat={this.setCat} buttonClick= 
+                            {this.addNewObject}/> 
+              <MyList theList={this.state.cats} />
+                  
+             </table>
          );
   }//render
+  
 
   addNewObject(event) {
      var newCats = this.state.cats;
@@ -94,7 +99,7 @@ class App extends React.Component {
      // console.log(this.state.cats);
   }//addnewobj
 
-}//Appcomp
+}//catListcomp
 
    class MyList extends React.Component {
      constructor(props) {
@@ -126,17 +131,20 @@ class App extends React.Component {
              // id={itemObj.id}
              //var keyItem=itemObj.snabshot.key;
              //console.log(key);
-           return <li key={itemObj.catPhoto} >
-                 <span>{itemObj.submitter + "  "}</span>
-                 <span>{itemObj.catName + "  "}</span>
-                 <span>{itemObj.catColor+ " "}</span>
-                 <span>{itemObj.catBreed}</span>
-                 <span><img width="100px" height="100px" src={itemObj.catPhoto}/></span>  
-           </li>
+           return <tr key={itemObj.catPhoto}>
+                  
+                 <td>{itemObj.submitter + "  "}</td>
+                 <td>{itemObj.catName + "  "}</td>
+                 <td>{itemObj.catColor+ " "}</td>
+                 <td>{itemObj.catBreed+ ""}</td>
+                 <td><img width="100px" height="120px" src={itemObj.catPhoto}/></td> 
+                  
+           
+           </tr>
          });
-         return <ol>
-          {listItems}
-       </ol>;
+         return <table className="table">
+               {listItems}
+               </table>;
         
 
      } //render
@@ -150,37 +158,47 @@ class App extends React.Component {
         }
        render(){
          return <div>
-          <input
-              
+        <table> 
+         <tr>     
+          <th>
+            <input  
              type="text"
              placeholder="My Name"
              onChange={this.props.setCat} /> 
+             </th>
+             <th>
            <input
               
              type="text"
              placeholder="Cat Name"
              onChange={this.props.setCat} /> 
-             
+             </th>
+             <th>
              <input
               
              type="text"
              placeholder="Cat Color"
              onChange={this.props.setCat} /> 
-              
-
+             </th> 
+          <th>
            <input
              type="text"
              placeholder="Cat Breed"
              onChange={this.props.setCat} />
-             
+          </th>
+             <th>     
              <input
              type="src"
              placeholder="Add Cat Photo"
              onChange={this.props.setCat} />
-
-           <button type="button" className="btn btn-success"
-           onClick={this.props.buttonClick}>Click Add</button>
-           </div>
+             </th>
+               <th>
+              <button type="button" 
+               onClick={this.props.buttonClick}>Click Add</button>
+             </th>
+            </tr>
+            </table>
+            </div>
 
        }//render
 
@@ -188,4 +206,4 @@ class App extends React.Component {
 
 
  ReactDOM.render(<App/>,
-        document.getElementById('app'));
+        document.getElementById('catList'));
