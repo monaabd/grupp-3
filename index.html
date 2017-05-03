@@ -4,65 +4,80 @@
     <title>Me & Meow</title>
     <meta charset="utf-8">
     <link type="text/css" rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Butterfly+Kids" rel="stylesheet">
+    <link  type="text/css" rel="stylesheet" href="mew.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Butterfly+Kids" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet">
+    
     <!-- React: -->
     <script src="https://unpkg.com/react@latest/dist/react.js"></script>
     <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-      <link  type="text/css" rel="stylesheet" href="mew.css">
+
+      
     
     <!-- firebase: -->
      <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
-      <script src="firebase.js"></script>
-    <!-- weather: -->
      
-    
-    
-      
-   
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAs1Wl6Ed1B2E8qrAGdRGVhcnE8isJ8SRk",
+        authDomain: "meow-d393f.firebaseapp.com",
+        databaseURL: "https://meow-d393f.firebaseio.com",
+        projectId: "meow-d393f",
+        storageBucket: "meow-d393f.appspot.com",
+        messagingSenderId: "587383622809"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <!-- //firebase -->
+
   </head>
   
-  <body>
+  <body id="body">
     
-    <div id="root">
-      <div id="admin">
-        <button>Admin</button>
-      </div>
-      
-      <div id="weather">
-        <h1>Me &amp; Meow</h1>
-        <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzIGfh1YoJVUWPzrAN3aQ9WP5jpmsWXGu6LwXHgKXJferTgKry"/></div>
-      </div>
-      <!--
-      <div id="facts">
-        <h3>Facts</h3>
-        <button>Show me something else</button>
-        <p>Unlike other cats, lions have a tuft of hair at the end of their tails.</p>
-      </div>
-      -->
-      <!--
-      <div id="yt">
-        <div>
-          <!--<button><img src="pictures/persian.jpg" /></button> -- >
-          <iframe width="320" height="240" src="https://www.youtube.com/embed/vzDQgNWOjXk" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div>
-          <!--<button><img src="pictures/ragdoll.jpg" /></button>-- >
-          <iframe width="320" height="240" src="https://www.youtube.com/embed/6LxiP2P3FcM" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div>
-          <!--<button><img src="pictures/bengal.jpg" /></button>-- >
-          <iframe width="320" height="240" src="https://www.youtube.com/embed/-aPjetuyI6w" frameborder="0" allowfullscreen></iframe>
-        </div>
-      </div>
-      -->
-        
+    <div id="weather">
+      <h1>Me &amp; Meow</h1>
+      <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzIGfh1YoJVUWPzrAN3aQ9WP5jpmsWXGu6LwXHgKXJferTgKry"/></div>
     </div>
+    
+    <div id="catFactSection">
+    </div>
+    
+    
+    <div id="yt">
+      <!-- YouTube API key:
+      AIzaSyCCUyF61OjYPKxYwKKdjQ2gaiZOtZxFaZQ -->
+      <div>
+        <!--<button><img src="pictures/persian.jpg" /></button> -->
+        <p>Play with your cat</p>
+        <iframe width="320" height="240" src="https://www.youtube.com/embed/_6w_L5Lcnbg" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div>
+        <!--<button><img src="pictures/ragdoll.jpg" /></button>-->
+        <p>Feed your cat</p>
+        <iframe width="320" height="240" src="https://www.youtube.com/embed/scxVFWyuai0" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div>
+        <!--<button><img src="pictures/bengal.jpg" /></button>-->
+        <p>Train your cat</p>
+        <iframe width="320" height="240" src="https://www.youtube.com/embed/cUDJOtlCctc" frameborder="0" allowfullscreen></iframe>
+      </div>  
+    </div>
+    
     <div id="catList">
-        
-        
+          
     </div>   
+
+    
+    <div id="adminSection">
+    </div>
+    
+    
+
     <script type="text/babel" src="scriptLouice.jsx"></script>
       <script type="text/jsx" src="meowMona.jsx"  ></script>
       <script src="weather.jsx" type="text/jsx"></script>

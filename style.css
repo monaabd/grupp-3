@@ -1,45 +1,28 @@
 /* ===== General ===== */
-body {
+#body {
   margin: 0;
-  background-color: hotpink;
-}
-body, #root {
+  background-image: url(pictures/paws.png);
   /*border: 1px solid black;*/
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: 'Butterfly Kids';
+  font-family: 'Love Ya Like A Sister', cursive;
   font-size: 1.5em;
   color: white;
-}
-#root {
   width: 100%;
   min-width: 400px;
 }
-#root > div {
+#body > div {
   width: 90%;
   margin-bottom: 30px;
 }
 #weather, #facts, #yt, #lists {
   border-radius: 10px;
-  padding: 10px;
-}
-/* ===== Admin ===== */
-#admin {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-}
-#admin > button {
-  background-color: gold;
-  width: auto;
-}
-h3 {
-  align-self: center;
 }
 
 /* ===== Weather ===== */
 #weather {
+  font-family: 'Butterfly Kids';
   border: 1px solid gold;
   background-color: gold;
   display: flex;
@@ -54,8 +37,8 @@ h3 {
   margin: 20px;
 }
 #weather > div {
-  border: 1px dotted lightblue;
   margin-right: 10px;
+  padding: 10px;
 }
 
 /* ===== Cat Facts ===== */
@@ -65,6 +48,16 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
+}
+#facts > button {
+  border: none;
+  padding: 10px;
+  background-color: gold;
+  width: auto;
+}
+#facts > p {
+  justify-content: center;
 }
 
 /* ===== YouTube ===== */
@@ -77,9 +70,12 @@ h3 {
   align-items: center;
   justify-content: space-around;
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 40px;
 }
 #yt > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border: 1px dotted orange;
   width: auto;
 }
@@ -94,42 +90,27 @@ h3 {
 }
 
 /* ===== Lists ===== */
-#lists {
-  border: 1px solid #46b3e2;
-  background-color: #46b3e2;
-  display: flex;
-  flex-direction: column;
-}
-#lists > h3 {
-  color: deeppink;
-}
-#lists > form {
+
+/* ===== Admin ===== */
+#admin {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
-#lists input {
-  padding: 0.5em;
-}
-button {
-  background-color: #33cc33;
-  color: white;
-  padding: 0.6em;
+#admin > button {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0);
+  outline: none;
   border: none;
-  margin-right: 5px;
-  margin-top: 5px;
+  width: auto;
 }
-button:hover {
+#admin > button:hover {
   cursor: pointer;
 }
 
-span.pink {color: deeppink;}
-span.blue {color: blue;}
-span.orange {color: orange;}
-
 @media (max-width: 770px) {
-  #lists > form {
-    flex-direction: column;
+  #weather > div > img {
+    height: 90px;
+    width: 100px;
   }
 }

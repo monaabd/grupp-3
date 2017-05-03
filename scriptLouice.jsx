@@ -1,20 +1,13 @@
-
-
-//baskomponent, skall rendera componenterna:
-//Weather
-//CatFact
-//Yt
-//Lists
-class App extends React.Component {
+class AppFact extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentFact: ''
+      currentFact: 'On average, a cat will sleep for 16 hours a day.'
     };
     this.showFact = this.showFact.bind(this);
   }
 
-  showFact() {
+  showFact(event) {
     console.log('before');
     let ajax = new XMLHttpRequest();
     let url = 'http://catfacts-api.appspot.com/api/facts';
@@ -31,16 +24,17 @@ class App extends React.Component {
     }).bind(this);
     ajax.send();
     console.log('after');
-  }
+  } //ajax cat fact
   
-
-
-
   render() {
     return(
-      <CatFact handleClick={this.showFact} currentFact={this.state.currentFact} />
+      <div>
+        <CatFact 
+          handleClick={this.showFact} 
+          currentFact={this.state.currentFact} />
+      </div>
     )
-  }
+  } 
 }
 
 class CatFact extends React.Component {
@@ -55,9 +49,64 @@ class CatFact extends React.Component {
   }
 }
 
+class AppAdmin extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoggedIn: false
+    };
+    this.logIn = this.logIn.bind(this);
+  }
+  
+  logIn(event) {
+    let self = this;
+    let provider = new firebase.auth.GithubAuthProvider();
+    
+    firebase.auth().signInWithPopup(provider)
+    .then(function(result) {
+      //om inloggning lyckas
+      console.log('logging in...');
+      if(result.user.displayName == 'Louice Danielsson') {
+        console.log('is authorizedddd...?');
+        self.setState({
+          isLoggedIn: true
+        });
+        console.log(self.state.isLoggedIn);
+      }
+    }).catch( function(error) {
+      //om inloggningen misslyckas
+      console.log(`Error: ${error.code}, ${error.message}`);
+    });
+  }
+  
+
+  render() {
+    return(
+      <div>
+        <Admin 
+          handleClick={this.logIn} />
+      </div>
+    )
+  } 
+}
+
+class Admin extends React.Component {
+  render() {
+    return(
+      <div id="admin">
+        <button onClick={this.props.handleClick}>Admin</button>
+      </div>
+    )
+  }
+}
 
 
 ReactDOM.render(
-  <App />,
-  document.getElementById('root')
+  <AppFact />,
+  document.getElementById('catFactSection')
+);
+
+ReactDOM.render(
+  <AppAdmin />,
+  document.getElementById('adminSection')
 );
