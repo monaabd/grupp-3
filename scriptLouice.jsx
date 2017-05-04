@@ -56,6 +56,8 @@ class AppAdmin extends React.Component {
       isLoggedIn: false
     };
     this.logIn = this.logIn.bind(this);
+    this.logOut = this.logOut.bind(this);
+
   }
   
   logIn(event) {
@@ -79,12 +81,30 @@ class AppAdmin extends React.Component {
     });
   }
   
+  logOut(event) {
+    let self = this;
+    
+    firebase.auth().signOut()
+    .then(function(result) {
+      //om utloggning lyckas
+      self.setState({
+        isLoggedIn: false
+      });
+      console.log(`result: ${result}`)
+    }).catch(function(error) {
+      console.log(`SIGN OUT errorCode: ${errorCode}, errorMessage: ${errorMessage}`);
+
+    });
+  }
+  }
+  
 
   render() {
     return(
       <div>
         <Admin 
-          handleClick={this.logIn} />
+          handleClickLogin={this.logIn}
+          handleClickLogOut={this.logOut}/>
       </div>
     )
   } 
@@ -92,11 +112,16 @@ class AppAdmin extends React.Component {
 
 class Admin extends React.Component {
   render() {
+    const isLoggedIn = this.state.isLoggedIn;
     return(
-      <div id="admin">
-        <button onClick={this.props.handleClick}>Admin</button>
+      <div>
+        {isLoggedIn ? (
+          <button onClick={this.props.handleClickLogOut}>Log Out</button>
+        ) : (
+          <button onClick={this.props.handleClickLogin}>Admin Log In</button>
+        )}
       </div>
-    )
+    );
   }
 }
 
