@@ -19,7 +19,11 @@
 #weather, #facts, #yt, #lists {
   border-radius: 10px;
 }
-
+#body > div:first-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 /* ===== Weather ===== */
 #weather {
   /*font-family: 'Butterfly Kids';*/
