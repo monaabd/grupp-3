@@ -1,0 +1,123 @@
+/* ===== General ===== */
+#body {
+  margin: 0;
+  background-image: url(pictures/paws.png);
+  /*border: 1px solid black;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Love Ya Like A Sister', cursive;
+  font-size: 1.5em;
+  color: white;
+  width: 100%;
+  min-width: 400px;
+}
+#body > div {
+  width: 90%;
+  margin-bottom: 30px;
+}
+#header, #weather, #facts, #yt, #lists {
+  border-radius: 10px;
+}
+#header{
+    background-color: darkblue;
+    text-align: center;    
+}
+/* ===== Weather ===== */
+#weather {
+  font-family: 'Love Ya Like A Sister', cursive;
+  border: 1px solid gold;
+  background-color: gold;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+#weather > h1 {
+  align-content: flex-start;
+  color: white;
+  font-size: 3em;
+  margin: 20px;
+}
+#weather > div {
+  margin-right: 10px;
+  padding: 10px;
+}
+span#weatherResult {
+    color: darkblue;
+}
+  
+
+/* ===== Cat Facts ===== */
+#facts {
+  border: 1px solid #61c13c;
+  background-color: #61c13c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+#facts > button {
+  border: none;
+  padding: 10px;
+  background-color: gold;
+  width: auto;
+}
+#facts > p {
+  justify-content: center;
+}
+
+/* ===== YouTube ===== */
+#yt {
+  border: 1px solid orange;
+  background-color: orange;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 10px;
+  padding-bottom: 40px;
+}
+#yt > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px dotted orange;
+  width: auto;
+}
+#yt > div > button {
+  border: none;
+  background-color: orange;
+  padding: 0;
+}
+#yt img {
+  width: 320px;
+  height: 240px;
+}
+
+/* ===== Lists ===== */
+
+/* ===== Admin ===== */
+#admin {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+#admin > button {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0);
+  outline: none;
+  border: none;
+  width: auto;
+}
+#admin > button:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 770px) {
+  #weather > div > img {
+    height: 90px;
+    width: 100px;
+  }
+}
