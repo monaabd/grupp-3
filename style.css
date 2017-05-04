@@ -96,12 +96,13 @@
 /* ===== Lists ===== */
 
 /* ===== Admin ===== */
-#admin {
+#adminSection {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  color: black;
 }
-#admin > button {
+#adminSection button {
   padding: 10px;
   background-color: rgba(0, 0, 0, 0);
   outline: none;

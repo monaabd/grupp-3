@@ -62,6 +62,8 @@ class AppAdmin extends React.Component {
   
   logIn(event) {
     let self = this;
+    let isLoggedIn = this.state.isLoggedIn;
+    console.log(`isLoggedIn: ${isLoggedIn}`);
     let provider = new firebase.auth.GithubAuthProvider();
     
     firebase.auth().signInWithPopup(provider)
@@ -71,9 +73,10 @@ class AppAdmin extends React.Component {
       if(result.user.displayName == 'Louice Danielsson') {
         console.log('is authorizedddd...?');
         self.setState({
-          isLoggedIn: true
+          isLoggedIn: !isLoggedIn
         });
-        console.log(self.state.isLoggedIn);
+      console.log('result: ', result);
+      console.log(`isLoggedIn: ${isLoggedIn}`);
       }
     }).catch( function(error) {
       //om inloggningen misslyckas
@@ -82,45 +85,50 @@ class AppAdmin extends React.Component {
   }
   
   logOut(event) {
+    console.log('loggar ut...');
     let self = this;
+    let isLoggedIn = this.state.isLoggedIn;
+    console.log(`isLoggedIn: ${isLoggedIn}`);
     
     firebase.auth().signOut()
     .then(function(result) {
       //om utloggning lyckas
+      console.log('utloggad');
       self.setState({
-        isLoggedIn: false
+        isLoggedIn: !isLoggedIn
       });
-      console.log(`result: ${result}`)
+      console.log('result: ', result);
+      console.log(`isLoggedIn: ${isLoggedIn}`);
     }).catch(function(error) {
-      console.log(`SIGN OUT errorCode: ${errorCode}, errorMessage: ${errorMessage}`);
+      console.log(`SIGN OUT errorCode: ${error.code}, errorMessage: ${error.message}`);
 
     });
   }
-}
   
-
   render() {
     return(
       <div>
         <Admin 
           handleClickLogin={this.logIn}
-          handleClickLogOut={this.logOut}/>
+          handleClickLogOut={this.logOut}
+          isLoggedIn={this.state.isLoggedIn} />
       </div>
     )
-  } 
+  }
 }
 
 class Admin extends React.Component {
   render() {
-    const isLoggedIn = this.state.isLoggedIn;
+    const isLoggedIn = this.props.isLoggedIn;
     return(
       <div>
         {isLoggedIn ? (
-          <button onClick={this.props.handleClickLogOut}>Log Out</button>
-        ) : (
           <button onClick={this.props.handleClickLogin}>Admin Log In</button>
+        ) : (
+          <button onClick={this.props.handleClickLogOut}>Log Out</button>
         )}
       </div>
+      
     );
   }
 }
