@@ -96,7 +96,7 @@ class AppAdmin extends React.Component {
 
     });
   }
-  }
+}
   
 
   render() {
