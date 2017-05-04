@@ -137,7 +137,7 @@ class App extends React.Component {
                  <td>{itemObj.catName + "  "}</td>
                  <td>{itemObj.catColor+ " "}</td>
                  <td>{itemObj.catBreed+ ""}</td>
-                 <td><img width="100px" height="120px" src={itemObj.catPhoto}/></td> 
+                 <td><img src={itemObj.catPhoto}/></td> 
                   
            
            </tr>
@@ -157,8 +157,7 @@ class App extends React.Component {
 
         }
        render(){
-         return <div>
-        <table> 
+         return <table> 
          <tr>     
           <th>
             <input  
@@ -198,8 +197,7 @@ class App extends React.Component {
              </th>
             </tr>
             </table>
-            </div>
-
+            
        }//render
 
        }//inputcomp

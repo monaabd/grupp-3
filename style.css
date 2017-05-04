@@ -16,13 +16,16 @@
   width: 90%;
   margin-bottom: 30px;
 }
-#weather, #facts, #yt, #lists {
+#header, #weather, #facts, #yt, #lists {
   border-radius: 10px;
 }
-
+#header{
+    background-color: darkblue;
+    text-align: center;    
+}
 /* ===== Weather ===== */
 #weather {
-  /*font-family: 'Butterfly Kids';*/
+  font-family: 'Love Ya Like A Sister', cursive;
   border: 1px solid gold;
   background-color: gold;
   display: flex;
@@ -43,6 +46,10 @@
 #weather span {
   padding: 20px;
 }
+span#weatherResult {
+    color: darkblue;
+}
+  
 
 /* ===== Cat Facts ===== */
 #facts {
