@@ -19,9 +19,15 @@
 #header, #weather, #facts, #yt, #lists {
   border-radius: 10px;
 }
+
 #header{
-    background-color: darkblue;
-    text-align: center;    
+  background-color: darkblue;
+  text-align: center;    
+}
+#body > div:first-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 /* ===== Weather ===== */
 #weather {
