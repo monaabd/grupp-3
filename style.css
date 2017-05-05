@@ -29,6 +29,10 @@
   flex-direction: row;
   justify-content: space-between;
 }
+#body > div:nth-child(2) > div {
+  width: 45%;
+}
+
 /* ===== Weather ===== */
 #weather {
   font-family: 'Love Ya Like A Sister', cursive;
@@ -42,11 +46,9 @@
 
 #weather span {
   padding: 20px;
+  color: darkblue;
 }
-span#weatherResult {
-    color: darkblue;
-}
-  
+ 
 
 /* ===== Cat Facts ===== */
 #facts {
@@ -72,35 +74,10 @@ span#weatherResult {
 
 
 /* ===== YouTube ===== */
-#yt {
-  border: 1px solid orange;
-  background-color: orange;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
-  padding-top: 10px;
-  padding-bottom: 40px;
-}
-#yt > div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px dotted orange;
-  width: auto;
-}
-#yt > div > button {
-  border: none;
-  background-color: orange;
-  padding: 0;
-}
-#yt img {
-  width: 320px;
-  height: 240px;
-}
+/*   se saras css   */
 
 /* ===== Lists ===== */
+/*   se mew.css   */
 
 /* ===== Admin ===== */
 #admin {
