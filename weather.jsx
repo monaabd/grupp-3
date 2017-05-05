@@ -30,16 +30,12 @@
                 var object=JSON.parse(ajaxx.responseText);
 
                 var data = object.weather[0];
-                
-               console.log('data',data); 
+
                 var weatherIcon = data.icon;
                 var iconURL = 'https://www.openweathermap.org/img/w/'+weatherIcon+'.png';
-
-                let img = document.createElement('img');
-                console.log(img);
-                img.src=iconURL;
                 this.setState({
-                    weather: data
+                    weather: data, iconURL: iconURL
+
                 })
             }
 
@@ -51,7 +47,9 @@
 } //func weather app
    // }//testfunc
 		render() {
-            return ( <span>Gothenburg's weather forcast: {this.state.weather.description}</span>
+
+            return ( <span>Gothenburg's weather forcast: {this.state.weather.description} <img src={this.state.iconURL}  /></span>
+
             	
 			);
 		}

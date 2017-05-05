@@ -1,48 +1,36 @@
 
 
-.table {
-
-    width: 100%;
-
+.catTable {
+    display: flex;
+    flex-direction:column;
     text-align: left;
-
-    display: inline-table;
+    
     border-radius: 10px;
-    
-    
- 
-
-}
-
-table, th, td {
-
     border: 1px solid black;
-
-    margin-bottom: 25px;
-    text-align: center; 
-    border-radius: 10px;
+    
 }
 
 td {
-
+     
     padding: 10px;
-    background-color: lightgreen;
+    background-color: fuchsia;
     width: 17%;
-    
+    border-radius: 10px;
+    border: 1px solid black;
 }
+
 td:last-child {
     width: 32.4%;
     height:20%; 
-    
+    border-radius: 10px;
 }
 
 th {
 
-    height: 30px;
     width: 12.5%;
     background-color: lightgreen;
+    border: 1px solid black; 
 
-    font-size: 18px;
     border-radius: 10px;
 }
 td > img {

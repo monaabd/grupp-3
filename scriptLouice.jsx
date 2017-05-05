@@ -62,6 +62,8 @@ class AppAdmin extends React.Component {
   
   logIn(event) {
     let self = this;
+    let provider = new firebase.auth.GithubAuthProvider();
+
     let isLoggedIn = this.state.isLoggedIn;
     let provider = new firebase.auth.GithubAuthProvider();
     let authorizedUsers = ['Louice Danielsson', 'Sara', 'Aman', 'Mona Abd', 'Francina Fernando'];
@@ -70,6 +72,7 @@ class AppAdmin extends React.Component {
     .then(function(result) {
       //om inloggning lyckas
       console.log('logging in...');
+
       for(let i=0; i<authorizedUsers.length; i++) {
         if(result.user.displayName == authorizedUsers[i]) {
           console.log('user is authorized');
@@ -86,6 +89,7 @@ class AppAdmin extends React.Component {
     });
   }
   
+
   logOut(event) {
     console.log('loggar ut...');
     let self = this;
