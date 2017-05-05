@@ -56,16 +56,28 @@ class AppAdmin extends React.Component {
       isLoggedIn: false
     };
     this.logIn = this.logIn.bind(this);
+<<<<<<< HEAD
+=======
+    this.logOut = this.logOut.bind(this);
+
+>>>>>>> abe95fff2aedcc3ac71e3b212311e9cfefaf22fd
   }
   
   logIn(event) {
     let self = this;
+<<<<<<< HEAD
     let provider = new firebase.auth.GithubAuthProvider();
+=======
+    let isLoggedIn = this.state.isLoggedIn;
+    let provider = new firebase.auth.GithubAuthProvider();
+    let authorizedUsers = ['Louice Danielsson', 'Sara', 'Aman', 'Mona Abd', 'Francina Fernando'];
+>>>>>>> abe95fff2aedcc3ac71e3b212311e9cfefaf22fd
     
     firebase.auth().signInWithPopup(provider)
     .then(function(result) {
       //om inloggning lyckas
       console.log('logging in...');
+<<<<<<< HEAD
       if(result.user.displayName == 'Louice Danielsson') {
         console.log('is authorizedddd...?');
         self.setState({
@@ -73,12 +85,24 @@ class AppAdmin extends React.Component {
         });
         console.log(self.state.isLoggedIn);
       }
+=======
+      for(let i=0; i<authorizedUsers.length; i++) {
+        if(result.user.displayName == authorizedUsers[i]) {
+          console.log('is authorizedddd...?');
+          self.setState({
+            isLoggedIn: true
+          });
+        }
+      }
+      console.log('result: ', result);
+>>>>>>> abe95fff2aedcc3ac71e3b212311e9cfefaf22fd
     }).catch( function(error) {
       //om inloggningen misslyckas
       console.log(`Error: ${error.code}, ${error.message}`);
     });
   }
   
+<<<<<<< HEAD
 
   render() {
     return(
@@ -95,6 +119,72 @@ class Admin extends React.Component {
     return(
       <div id="admin">
         <button onClick={this.props.handleClick}>Admin</button>
+=======
+  logOut(event) {
+    console.log('loggar ut...');
+    let self = this;
+    let isLoggedIn = this.state.isLoggedIn;
+    
+    firebase.auth().signOut()
+    .then(function(result) {
+      //om utloggning lyckas
+      console.log('utloggad');
+      self.setState({
+        isLoggedIn: false
+      });
+      console.log('result: ', result);
+    }).catch(function(error) {
+      console.log(`SIGN OUT errorCode: ${error.code}, errorMessage: ${error.message}`);
+
+    });
+  }
+  
+  render() {
+    return(
+      <div>
+        <AdminBtn 
+          handleClickLogin={this.logIn}
+          handleClickLogOut={this.logOut}
+          isLoggedIn={this.state.isLoggedIn} />
+        <ColorBtns 
+          isLoggedIn={this.state.isLoggedIn} />
+      </div>
+    )
+  }
+}
+
+class AdminBtn extends React.Component {
+  render() {
+    const isLoggedIn = this.props.isLoggedIn;
+    return(
+      <div>
+        {isLoggedIn ? (
+          <button onClick={this.props.handleClickLogOut}>Log Out</button>
+        ) : (
+          <button onClick={this.props.handleClickLogin}>Admin Log In</button>
+        )}
+      </div>
+      
+    );
+  }
+}
+
+class ColorBtns extends React.Component {
+  render() {
+    const isLoggedIn = this.props.isLoggedIn;
+    return(
+      <div>
+        {isLoggedIn ? (
+          <div>
+            <button>Red</button>
+            <button>Blue</button>
+            <button>Yellow</button>
+            <button>Green</button>
+          </div>
+        ) : (
+          null
+        )}
+>>>>>>> abe95fff2aedcc3ac71e3b212311e9cfefaf22fd
       </div>
     )
   }

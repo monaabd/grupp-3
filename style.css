@@ -19,9 +19,21 @@
 #header, #weather, #facts, #yt, #lists {
   border-radius: 10px;
 }
+<<<<<<< HEAD
 #header{
     background-color: darkblue;
     text-align: center;    
+=======
+
+#header{
+  background-color: darkblue;
+  text-align: center;    
+}
+#body > div:first-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+>>>>>>> abe95fff2aedcc3ac71e3b212311e9cfefaf22fd
 }
 /* ===== Weather ===== */
 #weather {
@@ -33,7 +45,11 @@
   align-items: center;
   justify-content: space-between;
 }
+<<<<<<< HEAD
 #weather > h1 {
+=======
+/*#weather > h1 {
+>>>>>>> abe95fff2aedcc3ac71e3b212311e9cfefaf22fd
   align-content: flex-start;
   color: white;
   font-size: 3em;
@@ -42,6 +58,12 @@
 #weather > div {
   margin-right: 10px;
   padding: 10px;
+<<<<<<< HEAD
+=======
+}*/
+#weather span {
+  padding: 20px;
+>>>>>>> abe95fff2aedcc3ac71e3b212311e9cfefaf22fd
 }
 span#weatherResult {
     color: darkblue;
@@ -58,6 +80,7 @@ span#weatherResult {
   padding: 20px;
 }
 #facts > button {
+<<<<<<< HEAD
   border: none;
   padding: 10px;
   background-color: gold;
@@ -65,6 +88,16 @@ span#weatherResult {
 }
 #facts > p {
   justify-content: center;
+=======
+  border: 1px solid orange;
+  padding: 10px;
+  background-color: gold;
+  width: auto;
+  font-family: 'Love Ya Like A Sister', cursive;
+}
+#facts > p {
+  text-align: center;
+>>>>>>> abe95fff2aedcc3ac71e3b212311e9cfefaf22fd
 }
 
 /* ===== YouTube ===== */
@@ -99,19 +132,33 @@ span#weatherResult {
 /* ===== Lists ===== */
 
 /* ===== Admin ===== */
+<<<<<<< HEAD
 #admin {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
 }
 #admin > button {
+=======
+#adminSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  color: black;
+}
+#adminSection button {
+>>>>>>> abe95fff2aedcc3ac71e3b212311e9cfefaf22fd
   padding: 10px;
   background-color: rgba(0, 0, 0, 0);
   outline: none;
   border: none;
   width: auto;
 }
+<<<<<<< HEAD
 #admin > button:hover {
+=======
+button:hover {
+>>>>>>> abe95fff2aedcc3ac71e3b212311e9cfefaf22fd
   cursor: pointer;
 }
 

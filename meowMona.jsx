@@ -58,13 +58,17 @@ class App extends React.Component {
 
   }
   render(){
+
     return (  <table className="catTable">
+
            
               <AddCats setCat={this.setCat} buttonClick= 
                             {this.addNewObject}/> 
               <MyList theList={this.state.cats} />
                   
+
             </table> 
+
          );
   }//render
   
@@ -132,19 +136,19 @@ class App extends React.Component {
              //var keyItem=itemObj.snabshot.key;
              //console.log(key);
            return <tr key={itemObj.catPhoto}>
-               
+        
                  <td>{itemObj.submitter + "  "}</td>
                  <td>{itemObj.catName + "  "}</td>
                  <td>{itemObj.catColor+ " "}</td>
                  <td>{itemObj.catBreed+ ""}</td>
                  <td><img src={itemObj.catPhoto}/></td> 
+
                </tr> 
            
          });
          return <tbody>
                {listItems}
                </tbody>;
-        
 
      } //render
    }//MyListcomp
@@ -156,6 +160,7 @@ class App extends React.Component {
 
         }
        render(){
+
          return (
          <thead>     
           <tr>
@@ -195,8 +200,10 @@ class App extends React.Component {
               <button type="button" 
                onClick={this.props.buttonClick}>Click Add</button>
              </th>
+
               </tr>
             </thead>);
+
             
        }//render
 

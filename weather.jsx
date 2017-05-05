@@ -30,10 +30,12 @@
                 var object=JSON.parse(ajaxx.responseText);
 
                 var data = object.weather[0];
+
                 var weatherIcon = data.icon;
                 var iconURL = 'https://www.openweathermap.org/img/w/'+weatherIcon+'.png';
                 this.setState({
                     weather: data, iconURL: iconURL
+
                 })
             }
 
@@ -45,7 +47,9 @@
 } //func weather app
    // }//testfunc
 		render() {
+
             return ( <span>Gothenburg's weather forcast: {this.state.weather.description} <img src={this.state.iconURL}  /></span>
+
             	
 			);
 		}
