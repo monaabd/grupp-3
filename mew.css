@@ -1,0 +1,41 @@
+
+.catTable {
+    display: flex;
+    flex-direction:column;
+    text-align: left;
+    
+    border-radius: 10px;
+    border: 1px solid black;
+    
+}
+
+td {
+     
+    padding: 10px;
+    background-color: fuchsia;
+    width: 17%;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+td:last-child {
+    width: 32.4%;
+    height:20%; 
+    border-radius: 10px;
+}
+
+th {
+
+    width: 12.5%;
+    background-color: lightgreen;
+    border: 1px solid black; 
+    border-radius: 10px;
+}
+td > img {
+
+    width: 70%;
+   
+}
+#weatherResult {
+    color: darkblue;
+}
+  

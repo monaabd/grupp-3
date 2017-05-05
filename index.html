@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Me & Meow</title>
+    <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <link  type="text/css" rel="stylesheet" href="mew.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Butterfly+Kids" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet">
+    
+    <!-- React: -->
+    <script src="https://unpkg.com/react@latest/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+      
+    
+    <!-- firebase: -->
+     <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+     
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAs1Wl6Ed1B2E8qrAGdRGVhcnE8isJ8SRk",
+        authDomain: "meow-d393f.firebaseapp.com",
+        databaseURL: "https://meow-d393f.firebaseio.com",
+        projectId: "meow-d393f",
+        storageBucket: "meow-d393f.appspot.com",
+        messagingSenderId: "587383622809"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <!-- //firebase -->
+      
+  </head>
+   
+  <body id="body">
+    
+     <div id="header"><h1>Me &amp; Meow</h1></div>
+     
+      <div id="weather"></div>
+    
+    <div id="catFactSection">
+    </div>
+    
+    
+   <!-- <div id="yt">
+      <!-- YouTube API key:
+      AIzaSyCCUyF61OjYPKxYwKKdjQ2gaiZOtZxFaZQ -- >
+      <div>
+        <!--<button><img src="pictures/persian.jpg" /></button> -- >
+        <p>Play with your cat</p>
+        <iframe width="320" height="240" src="https://www.youtube.com/embed/_6w_L5Lcnbg" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div>
+        <!--<button><img src="pictures/ragdoll.jpg" /></button>-- >
+        <p>Feed your cat</p>
+        <iframe width="320" height="240" src="https://www.youtube.com/embed/scxVFWyuai0" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div>
+        <!--<button><img src="pictures/bengal.jpg" /></button>-- >
+        <p>Train your cat</p>
+        <iframe width="320" height="240" src="https://www.youtube.com/embed/cUDJOtlCctc" frameborder="0" allowfullscreen></iframe>
+      </div>  
+    </div> -->
+    
+    
+    
+    <div id="catList">
+          
+    </div>   
+  
+    
+    <div id="adminSection">
+    </div>
+    
+    
+
+    <script type="text/babel" src="scriptLouice.jsx"></script>
+      <script type="text/jsx" src="meowMona.jsx"  ></script>
+      <script src="weather.jsx" type="text/jsx"></script>
+  </body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
