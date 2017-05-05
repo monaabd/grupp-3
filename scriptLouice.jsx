@@ -14,7 +14,7 @@ class AppFact extends React.Component {
     ajax.open('get', url);
     ajax.onreadystatechange = (function() {
       if(ajax.status == 200 && ajax.readyState == 4) {
-        let response = JSON.parse(ajax.responseText)
+        let response = JSON.parse(ajax.responseText);
         let fact = response.facts[0];
         console.log(`fact: ${fact}`);
         this.setState({
@@ -72,7 +72,7 @@ class AppAdmin extends React.Component {
       console.log('logging in...');
       for(let i=0; i<authorizedUsers.length; i++) {
         if(result.user.displayName == authorizedUsers[i]) {
-          console.log('is authorizedddd...?');
+          console.log('user is authorized');
           self.setState({
             isLoggedIn: true
           });
@@ -81,6 +81,7 @@ class AppAdmin extends React.Component {
       console.log('result: ', result);
     }).catch( function(error) {
       //om inloggningen misslyckas
+      console.log('user is NOT authorized');
       console.log(`Error: ${error.code}, ${error.message}`);
     });
   }

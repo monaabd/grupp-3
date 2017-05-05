@@ -24,7 +24,7 @@
   background-color: darkblue;
   text-align: center;    
 }
-#body > div:first-child {
+#body > div:nth-child(2) {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
