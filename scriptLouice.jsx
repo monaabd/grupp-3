@@ -62,8 +62,6 @@ class AppAdmin extends React.Component {
   
   logIn(event) {
     let self = this;
-    let provider = new firebase.auth.GithubAuthProvider();
-
     let isLoggedIn = this.state.isLoggedIn;
     let provider = new firebase.auth.GithubAuthProvider();
     let authorizedUsers = ['Louice Danielsson', 'Sara', 'Aman', 'Mona Abd', 'Francina Fernando'];
