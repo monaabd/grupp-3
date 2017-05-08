@@ -15,7 +15,7 @@
        }   
      weatherApi(){
          console.log("weatehrapi");
-        let urlx='http://api.openweathermap.org/data/2.5/weather?';
+        let urlx='https://crossorigin.me/http://api.openweathermap.org/data/2.5/weather?';
 
         urlx += 'q=' + 'Gothenburg' +',uk&APPID=5d224fafcdf9102b03d9243837eb00d4' + '&units=metric'
 
