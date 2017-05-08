@@ -147,14 +147,16 @@ class YouTube extends React.Component{
     super(props);
     this.state = {
       source: "https://www.youtube.com/embed/",
-      query: "",
+      //query: "",
       videos: []
     }
   }
-  
-  showPlay(event){
 
+  showPlay(event){
     let ajax = new XMLHttpRequest();
+    let url = "https://www.googleapis.com/youtube/v3/search?part=snippet";
+        url += "&key=AIzaSyAx0VK9xWs4v-gREmhfa1vlUXI_RUtcLaI";
+        url += "&q=play+with+your+cat";
     ajax.open("GET", url);
     ajax.onreadystatechange = (function(event) {
 
@@ -163,11 +165,11 @@ class YouTube extends React.Component{
 
         let data = JSON.parse(ajax.responseText);
         console.log(data);
-        console.log(ajax.responseText);
+        //console.log(ajax.responseText);
         let videos = data.items;
         this.setState({
-          videos: videos,
-          query: "&q=play+with+your+cat"
+          videos: videos
+          //query: "&q=play+with+your+cat"
         })
       }
     }).bind(this);
@@ -175,8 +177,10 @@ class YouTube extends React.Component{
   }
 
   showFeed(event){
-
     let ajax = new XMLHttpRequest();
+    let url = "https://www.googleapis.com/youtube/v3/search?part=snippet";
+        url += "&key=AIzaSyAx0VK9xWs4v-gREmhfa1vlUXI_RUtcLaI";
+        url += "&q=feed+your+cat";
     ajax.open("GET", url);
     ajax.onreadystatechange = (function(event) {
 
@@ -188,8 +192,8 @@ class YouTube extends React.Component{
         console.log(ajax.responseText);
         let videos = data.items;
         this.setState({
-          videos: videos,
-          query: "&q=feed+your+cat"
+          videos: videos
+          //query: "&q=feed+your+cat"
         })
       }
     }).bind(this);
@@ -197,8 +201,10 @@ class YouTube extends React.Component{
   }
 
   showTrain(event){
-
     let ajax = new XMLHttpRequest();
+    let url = "https://www.googleapis.com/youtube/v3/search?part=snippet";
+        url += "&key=AIzaSyAx0VK9xWs4v-gREmhfa1vlUXI_RUtcLaI";
+        url += "&q=train+your+cat";
     ajax.open("GET", url);
     ajax.onreadystatechange = (function(event) {
 
@@ -209,38 +215,51 @@ class YouTube extends React.Component{
         console.log(data);
         console.log(ajax.responseText);
         let videos = data.items;
+        console.log(videos);
         this.setState({
-          videos: videos,
-          query: "&q=train+your+cat"
+          videos: videos
+          //query: "&q=train+your+cat"
         })
       }
     }).bind(this);
     ajax.send();
   }
   
-render() {
+  render() {
     return(
       <div>
+        <Buttons 
+          handlePlay={this.showPlay} 
+          handleFeed={this.showFeed} 
+          handlePlay={this.showPlay}/>
         
-      <button id="play" onClick={this.showPlay}>Play with your cat</button>
-      <button id="feed" onClick={this.showFeed}>Feed your cat</button>
-      <button id="train" onClick={this.showTrain}>Train your cat</button>
-        
-      <Video 
+        <Video 
         source={this.state.source}
         videoId={this.state.videos[0].id.videoId}
         />
         <Video 
-        source={this.state.source}
-        videoId={this.state.videos[1].id.videoId}
+          source={this.state.source}
+          videoId={this.state.videos[1].id.videoId}
         />
         <Video 
-        source={this.state.source}
-        videoId={this.state.videos[2].id.videoId}
+          source={this.state.source}
+          videoId={this.state.videos[2].id.videoId}
         />
       </div>
-        )
-    }
+    )
+  }
+}
+
+class Buttons extends React.Component {
+  render() {
+    return(
+      <div>
+        <button className="play" onClick={this.props.handlePlay}>Play with your cat</button>
+        <button className="feed" onClick={this.props.handleFeed}>Feed your cat</button>
+        <button className="train" onClick={this.props.handleTrain}>Train your cat</button>
+      </div>
+    )
+  }
 }
 
 class Video extends React.Component {
@@ -250,23 +269,14 @@ class Video extends React.Component {
         width="320" 
         height="240" 
         class="play" 
-        src={this.props.source + this.props.id}
+        src={this.props.source + this.props.videoId}
         frameborder="0" />
     )
   }
 }
 
+
 ReactDOM.render(
 <YouTube />,
   document.getElementById("yt")
 )
-
-
-
-
-
-
-
-
-
-    
