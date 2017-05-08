@@ -1,16 +1,13 @@
 
-
-.catTable {
+#catTable {
     display: flex;
     flex-direction:column;
-    text-align: left;
-    
+    text-align: center;
     border-radius: 10px;
     border: 1px solid black;
     
 }
-
-td {
+ td {
      
     padding: 10px;
     background-color: fuchsia;
@@ -25,20 +22,24 @@ td:last-child {
     border-radius: 10px;
 }
 
-th {
-
+th  {
+     
     width: 12.5%;
     background-color: lightgreen;
     border: 1px solid black; 
-
+    padding: 5px; 
     border-radius: 10px;
+    
 }
 td > img {
 
     width: 70%;
    
-}
-#weatherResult {
-    color: darkblue;
+} 
+ span > #weatherResult {
+    color: orangered;
+    font-weight: bolder;
+      display: inline-block;
 }
   
+

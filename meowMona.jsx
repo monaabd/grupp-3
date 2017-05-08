@@ -59,7 +59,7 @@ class App extends React.Component {
   }
   render(){
 
-    return (  <table className="catTable">
+    return (  <table id="catTable">
 
            
               <AddCats setCat={this.setCat} buttonClick= 

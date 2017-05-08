@@ -3,7 +3,7 @@
     constructor(props) {
      super(props);
       this.state={
-          weather:"första gången"
+          weather:"first time"
       };
        //his.test = this.test.bind(this);
         this.weatherApi=this.weatherApi.bind(this);
@@ -47,10 +47,11 @@
 } //func weather app
    // }//testfunc
 		render() {
+            
+            return (<div>
+                    <span>Gothenburg's weather forcast:<span id="weatherResult"> {this.state.weather.description} </span> <img src={this.state.iconURL}/></span>
+                    </div>
 
-            return ( <span>Gothenburg's weather forcast: {this.state.weather.description} <img src={this.state.iconURL}  /></span>
-
-            	
 			);
 		}
 		
