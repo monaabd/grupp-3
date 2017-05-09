@@ -6,6 +6,10 @@ body {
     
 }
 
+#header {
+  background-image: url(pictures/header-test.jpg)
+}
+
 table {
     width: 100%;
     text-align: left;
@@ -37,4 +41,8 @@ td > img {
 
 th:last-child {
     width: 100px;
+}
+
+#play {
+  border: 2px solid black;
 }

@@ -1,7 +1,7 @@
 /* ===== General ===== */
 #body {
   margin: 0;
-  background-image: url(pictures/paws.png);
+  background-image: url(pictures/cats.png);
   /*border: 1px solid black;*/
   display: flex;
   flex-direction: column;
@@ -88,13 +88,15 @@ span#weatherResult {
 }
 #yt > div > button {
   border: none;
-  background-color: orange;
-  padding: 0;
+  border-radius: 3px;
+  padding: 2;
 }
 #yt img {
   width: 320px;
   height: 240px;
 }
+
+
 
 /* ===== Lists ===== */
 
