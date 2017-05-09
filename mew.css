@@ -28,7 +28,7 @@ td:last-child {
 th  {
      
     width: 12.5%;
-    background-color: lightgreen;
+    background-color: mediumaquamarine;
     border: 1px solid black; 
     padding: 10px; 
     border-radius: 10px;
@@ -49,16 +49,19 @@ td > img {
     font-weight: bolder;
       display: inline-block;
 }
+#animationIcon {
+    background: white;
+    border-radius: 10px;
+}
   
-#animation > img{
-    width:150px;
-    height: 150px;
-    background: transparent;
+#animationIcon > img{
+    width:170px;
+    height: 170px;
     position: relative;
     -webkit-animation: mymove 20s infinite; /* Safari 4.0 - 8.0 */
     -webkit-animation-iteration-count: 2; /* Safari 4.0 - 8.0 */
     animation: mymove 20s infinite;
-    animation-iteration-count: 1;
+    animation-iteration-count: 2;
 }
 
 /* Safari 4.0 - 8.0 */

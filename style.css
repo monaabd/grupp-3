@@ -1,7 +1,7 @@
 /* ===== General ===== */
 #body {
   margin: 0;
-  background-image: url(pictures/paws.png);
+  background-image: url(pictures/cats.png);
   /*border: 1px solid black;*/
   display: flex;
   flex-direction: column;

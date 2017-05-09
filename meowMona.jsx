@@ -210,6 +210,5 @@ class App extends React.Component {
        }//inputcomp
 
 
-ReactDOM.render(<div><div id="animation">
-    <img src="https://lh3.googleusercontent.com/-DtpichWuTLE/Vi2xsExsKBI/AAAAAAAALvQ/eTJmDy_8jLU/w426-h240/tumblr_nh3ivhx9ob1rs61ydo1_250.gif"/></div><App/></div>,
+ReactDOM.render(<App/>,
         document.getElementById('catList'));
