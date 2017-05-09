@@ -14,7 +14,7 @@ class AppFact extends React.Component {
     ajax.open('get', url);
     ajax.onreadystatechange = (function() {
       if(ajax.status == 200 && ajax.readyState == 4) {
-        let response = JSON.parse(ajax.responseText)
+        let response = JSON.parse(ajax.responseText);
         let fact = response.facts[0];
         console.log(`fact: ${fact}`);
         this.setState({
@@ -56,45 +56,102 @@ class AppAdmin extends React.Component {
       isLoggedIn: false
     };
     this.logIn = this.logIn.bind(this);
+    this.logOut = this.logOut.bind(this);
+
   }
   
   logIn(event) {
     let self = this;
+    let isLoggedIn = this.state.isLoggedIn;
     let provider = new firebase.auth.GithubAuthProvider();
+    let authorizedUsers = ['Louice Danielsson', 'Sara', 'Aman', 'Mona Abd', 'Francina Fernando'];
     
     firebase.auth().signInWithPopup(provider)
     .then(function(result) {
       //om inloggning lyckas
       console.log('logging in...');
-      if(result.user.displayName == 'Louice Danielsson') {
-        console.log('is authorizedddd...?');
-        self.setState({
-          isLoggedIn: true
-        });
-        console.log(self.state.isLoggedIn);
+
+      for(let i=0; i<authorizedUsers.length; i++) {
+        if(result.user.displayName == authorizedUsers[i]) {
+          console.log('user is authorized');
+          self.setState({
+            isLoggedIn: true
+          });
+        }
       }
+      console.log('result: ', result);
     }).catch( function(error) {
       //om inloggningen misslyckas
+      console.log('user is NOT authorized');
       console.log(`Error: ${error.code}, ${error.message}`);
     });
   }
   
 
+  logOut(event) {
+    console.log('loggar ut...');
+    let self = this;
+    let isLoggedIn = this.state.isLoggedIn;
+    
+    firebase.auth().signOut()
+    .then(function(result) {
+      //om utloggning lyckas
+      console.log('utloggad');
+      self.setState({
+        isLoggedIn: false
+      });
+      console.log('result: ', result);
+    }).catch(function(error) {
+      console.log(`SIGN OUT errorCode: ${error.code}, errorMessage: ${error.message}`);
+
+    });
+  }
+  
   render() {
     return(
       <div>
-        <Admin 
-          handleClick={this.logIn} />
+        <AdminBtn 
+          handleClickLogin={this.logIn}
+          handleClickLogOut={this.logOut}
+          isLoggedIn={this.state.isLoggedIn} />
+        <ColorBtns 
+          isLoggedIn={this.state.isLoggedIn} />
       </div>
     )
-  } 
+  }
 }
 
-class Admin extends React.Component {
+class AdminBtn extends React.Component {
   render() {
+    const isLoggedIn = this.props.isLoggedIn;
     return(
-      <div id="admin">
-        <button onClick={this.props.handleClick}>Admin</button>
+      <div>
+        {isLoggedIn ? (
+          <button onClick={this.props.handleClickLogOut}>Log Out</button>
+        ) : (
+          <button onClick={this.props.handleClickLogin}>Admin Log In</button>
+        )}
+      </div>
+      
+    );
+  }
+}
+
+class ColorBtns extends React.Component {
+  render() {
+    const isLoggedIn = this.props.isLoggedIn;
+    return(
+      <div>
+        {isLoggedIn ? (
+          <div>
+            <button>Red</button>
+            <button>Blue</button>
+            <button>Yellow</button>
+            <button>Green</button>
+          </div>
+        ) : (
+          null
+        )}
       </div>
     )
   }

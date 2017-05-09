@@ -53,18 +53,22 @@ class App extends React.Component {
       this.setState({ catColor: el.value }); 
     else if (el.placeholder == "Cat Breed")
       this.setState({ catBreed: el.value });
-      else (el.placeholder == "Add Cat Photo")
+      else (el.placeholder == "Photo URL")
       this.setState({ catPhoto: el.value });
 
   }
   render(){
-    return (  <table className ="table">
+
+    return (  <table id="catTable">
+
            
               <AddCats setCat={this.setCat} buttonClick= 
                             {this.addNewObject}/> 
               <MyList theList={this.state.cats} />
                   
-             </table>
+
+            </table> 
+
          );
   }//render
   
@@ -132,20 +136,19 @@ class App extends React.Component {
              //var keyItem=itemObj.snabshot.key;
              //console.log(key);
            return <tr key={itemObj.catPhoto}>
-                  
+        
                  <td>{itemObj.submitter + "  "}</td>
                  <td>{itemObj.catName + "  "}</td>
                  <td>{itemObj.catColor+ " "}</td>
                  <td>{itemObj.catBreed+ ""}</td>
                  <td><img src={itemObj.catPhoto}/></td> 
-                  
+
+               </tr> 
            
-           </tr>
          });
-         return <table className="table">
+         return <tbody>
                {listItems}
-               </table>;
-        
+               </tbody>;
 
      } //render
    }//MyListcomp
@@ -157,51 +160,55 @@ class App extends React.Component {
 
         }
        render(){
-         return <table> 
-         <tr>     
-          <th>
-            <input  
+
+         return (
+         <thead>     
+          <tr>
+            <th>
+            <input className="inputClass"  
              type="text"
              placeholder="My Name"
              onChange={this.props.setCat} /> 
              </th>
              <th>
-           <input
+           <input className="inputClass"
               
              type="text"
              placeholder="Cat Name"
              onChange={this.props.setCat} /> 
              </th>
              <th>
-             <input
+             <input className="inputClass"
               
              type="text"
              placeholder="Cat Color"
              onChange={this.props.setCat} /> 
              </th> 
           <th>
-           <input
+           <input className="inputClass"
              type="text"
              placeholder="Cat Breed"
              onChange={this.props.setCat} />
           </th>
              <th>     
-             <input
+             <input className="inputClass"
              type="src"
-             placeholder="Add Cat Photo"
+             placeholder="Photo URL"
              onChange={this.props.setCat} />
              </th>
                <th>
               <button type="button" 
-               onClick={this.props.buttonClick}>Click Add</button>
+               onClick={this.props.buttonClick}> Add cat</button>
              </th>
-            </tr>
-            </table>
+
+              </tr>
+            </thead>);
+
             
        }//render
 
        }//inputcomp
 
 
- ReactDOM.render(<App/>,
+ReactDOM.render(<App/>,
         document.getElementById('catList'));

@@ -3,7 +3,7 @@
     constructor(props) {
      super(props);
       this.state={
-          weather:"första gången"
+          weather:"first time"
       };
        //his.test = this.test.bind(this);
         this.weatherApi=this.weatherApi.bind(this);
@@ -14,8 +14,8 @@
            this.weatherApi();
        }   
      weatherApi(){
-         console.log("weatehrapi");
-        let urlx='http://api.openweathermap.org/data/2.5/weather?';
+         
+        let urlx='https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?';
 
         urlx += 'q=' + 'Gothenburg' +',uk&APPID=5d224fafcdf9102b03d9243837eb00d4' + '&units=metric'
 
@@ -30,16 +30,12 @@
                 var object=JSON.parse(ajaxx.responseText);
 
                 var data = object.weather[0];
-                
-               console.log('data',data); 
+                 
                 var weatherIcon = data.icon;
                 var iconURL = 'https://www.openweathermap.org/img/w/'+weatherIcon+'.png';
-
-                let img = document.createElement('img');
-                console.log(img);
-                img.src=iconURL;
                 this.setState({
-                    weather: data
+                    weather: data, iconURL: iconURL
+
                 })
             }
 
@@ -51,8 +47,12 @@
 } //func weather app
    // }//testfunc
 		render() {
-            return ( <span>Gothenburg's weather forcast: {this.state.weather.description}</span>
-            	
+            
+            return (<div>
+                    <span>Gothenburg's weather forcast:<br/>
+                        <span id="weatherResult"> {this.state.weather.description} </span> <img src={this.state.iconURL}/></span>
+                    </div>
+
 			);
 		}
 		
