@@ -14,7 +14,7 @@
            this.weatherApi();
        }   
      weatherApi(){
-         console.log("weatehrapi"); 
+         
         let urlx='https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?';
 
         urlx += 'q=' + 'Gothenburg' +',uk&APPID=5d224fafcdf9102b03d9243837eb00d4' + '&units=metric'
@@ -30,7 +30,7 @@
                 var object=JSON.parse(ajaxx.responseText);
 
                 var data = object.weather[0];
-
+                 
                 var weatherIcon = data.icon;
                 var iconURL = 'https://www.openweathermap.org/img/w/'+weatherIcon+'.png';
                 this.setState({
@@ -49,7 +49,8 @@
 		render() {
             
             return (<div>
-                    <span>Gothenburg's weather forcast:<span id="weatherResult"> {this.state.weather.description} </span> <img src={this.state.iconURL}/></span>
+                    <span>Gothenburg's weather forcast:<br/>
+                        <span id="weatherResult"> {this.state.weather.description} </span> <img src={this.state.iconURL}/></span>
                     </div>
 
 			);

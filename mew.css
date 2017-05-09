@@ -7,7 +7,9 @@
     border: 1px solid black;
     
 }
- td {
+
+
+ tr > td {
      
     padding: 10px;
     background-color: fuchsia;
@@ -18,22 +20,28 @@
 
 td:last-child {
     width: 32.4%;
-    height:20%; 
+    height:17%; 
     border-radius: 10px;
 }
+
 
 th  {
      
     width: 12.5%;
     background-color: lightgreen;
     border: 1px solid black; 
-    padding: 5px; 
+    padding: 10px; 
     border-radius: 10px;
     
 }
+
+.inputClass {
+  width:100%;
+   font-size:0.55em;   
+}
 td > img {
 
-    width: 70%;
+    width: 40%;
    
 } 
  span > #weatherResult {
@@ -42,4 +50,48 @@ td > img {
       display: inline-block;
 }
   
+#animation > img{
+    width:150px;
+    height: 150px;
+    background: transparent;
+    position: relative;
+    -webkit-animation: mymove 20s infinite; /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count: 2; /* Safari 4.0 - 8.0 */
+    animation: mymove 20s infinite;
+    animation-iteration-count: 1;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes mymove {
+    from {left: 0px;}
+    to {left: 950px;}
+}
+
+@keyframes mymove {
+    from {left: 0px;}
+    to {left: 950px;}
+}
+
+
+@media (min-width: 260px) and (max-width:600px) {
+     #animation > img {
+    animation: mymove 2s infinite;
+    animation-iteration-count:0;
+      
+  }
+@keyframes mymove {
+    from {left: 0px;}
+    to {left: 100px;}
+}
+}
+
+
+
+
+
+
+
+
+
+
 

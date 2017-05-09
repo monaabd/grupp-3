@@ -165,33 +165,33 @@ class App extends React.Component {
          <thead>     
           <tr>
             <th>
-            <input  
+            <input className="inputClass"  
              type="text"
              placeholder="My Name"
              onChange={this.props.setCat} /> 
              </th>
              <th>
-           <input
+           <input className="inputClass"
               
              type="text"
              placeholder="Cat Name"
              onChange={this.props.setCat} /> 
              </th>
              <th>
-             <input
+             <input className="inputClass"
               
              type="text"
              placeholder="Cat Color"
              onChange={this.props.setCat} /> 
              </th> 
           <th>
-           <input
+           <input className="inputClass"
              type="text"
              placeholder="Cat Breed"
              onChange={this.props.setCat} />
           </th>
              <th>     
-             <input
+             <input className="inputClass"
              type="src"
              placeholder="Add Cat Photo"
              onChange={this.props.setCat} />
@@ -210,5 +210,6 @@ class App extends React.Component {
        }//inputcomp
 
 
- ReactDOM.render(<App/>,
+ReactDOM.render(<div><div id="animation">
+    <img src="https://lh3.googleusercontent.com/-DtpichWuTLE/Vi2xsExsKBI/AAAAAAAALvQ/eTJmDy_8jLU/w426-h240/tumblr_nh3ivhx9ob1rs61ydo1_250.gif"/></div><App/></div>,
         document.getElementById('catList'));
