@@ -53,7 +53,7 @@ class App extends React.Component {
       this.setState({ catColor: el.value }); 
     else if (el.placeholder == "Cat Breed")
       this.setState({ catBreed: el.value });
-      else (el.placeholder == "Add Cat Photo")
+      else (el.placeholder == "Photo URL")
       this.setState({ catPhoto: el.value });
 
   }
@@ -193,12 +193,12 @@ class App extends React.Component {
              <th>     
              <input className="inputClass"
              type="src"
-             placeholder="Add Cat Photo"
+             placeholder="Photo URL"
              onChange={this.props.setCat} />
              </th>
                <th>
               <button type="button" 
-               onClick={this.props.buttonClick}>Click Add</button>
+               onClick={this.props.buttonClick}> Add cat</button>
              </th>
 
               </tr>
