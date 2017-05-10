@@ -108,8 +108,8 @@ render() {
 
     return(
       <div>
-      <button id="play" onClick={this.showPlay}>Play with your cat</button>
-        {/*<button id="feed" onClick={this.showFeed}>Feed your cat</button>
+      {/*<button id="play" onClick={this.showPlay}>Play with your cat</button>
+        <button id="feed" onClick={this.showFeed}>Feed your cat</button>
       <button id="train" onClick={this.showTrain}>Train your cat</button>*/}
 
       <Video 
