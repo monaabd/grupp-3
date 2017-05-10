@@ -7,10 +7,10 @@
   flex-direction: column;
   align-items: center;
   font-family: 'Love Ya Like A Sister', cursive;
-  font-size: 1.5em;
+  font-size: 1em;
   color: white;
   width: 100%;
-  min-width: 400px;
+  min-width: 417px;
 }
 #body > div {
   width: 90%;
@@ -36,8 +36,8 @@
 /* ===== Weather ===== */
 #weather {
   font-family: 'Love Ya Like A Sister', cursive;
-  border: 1px solid gold;
-  background-color: gold;
+  
+  background-color: transparent;
   display: flex;
   flex-direction: row;
   align-items: center;
