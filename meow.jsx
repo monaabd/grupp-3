@@ -223,15 +223,15 @@ class YouTube extends React.Component{
       if(ajax.readyState == 4 && ajax.status == 200 ){
         console.log("Success!");
 
-        let data = JSON.parse(ajax.responseText);
-        console.log(data);
-        console.log(ajax.responseText);
         let videos = data.items;
-        
-        
+        console.log(videos);
+        let mappedVideos = videos.map(function(video) {
+          return {id: video.id.videoId}
+        });
+        console.log("Mapped Vids: ",mappedVideos);
         this.setState({
-          videos: videos
-        })
+          videos: mappedVideos
+        });
       }
     }).bind(this);
     ajax.send();
@@ -242,27 +242,26 @@ render() {
   console.log('render: state', this.state);
   
   if (this.state.videos.length >= 1){
-    //console.log(this.state.videos);
-    console.log("here we are"
-              ,this.state.videos[0].id.videoId);
     return(
       <div>
         
-      <button id="play" onClick={this.showPlay}>Play with your cat</button>
-      <button id="feed" onClick={this.showFeed}>Feed your cat</button>
-      <button id="train" onClick={this.showTrain}>Train your cat</button>
+      {/*<button id="play" onClick={this.showPlay}>Play with your cat</button>
+        <button id="feed" onClick={this.showFeed}>Feed your cat</button>
+      <button id="train" onClick={this.showTrain}>Train your cat</button>*/}
 
       <Video 
         source={this.state.source}
         id={this.state.videos[0].id}
         />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <Video 
         source={this.state.source}
-        videoId={this.state.videos[1].id}
+        id={this.state.videos[1].id}
         />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <Video 
         source={this.state.source}
-        videoId={this.state.videos[2].id}
+        id={this.state.videos[2].id}
         />
       </div>
         )
@@ -270,9 +269,9 @@ render() {
   else 
     return(
       <div> 
-      <button id="play" onClick={this.showPlay}>Play with your cat</button>
-      <button id="feed" onClick={this.showFeed}>Feed your cat</button>
-      <button id="train" onClick={this.showTrain}>Train your cat</button>
+      <button id="playBtn" onClick={this.showPlay}>Watch cat videos!</button>
+        {/*<button id="feed" onClick={this.showFeed}>Feed your cat</button>
+      <button id="train" onClick={this.showTrain}>Train your cat</button>*/}
       </div>
         )
     }
@@ -295,13 +294,4 @@ class Video extends React.Component {
 ReactDOM.render(
     <YouTube/>,
   document.getElementById("yt")
-)
-
-
-
-
-
-
-
-
-    
+)    
