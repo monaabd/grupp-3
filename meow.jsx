@@ -157,4 +157,4 @@ class Video extends React.Component {
 
 ReactDOM.render(
     <YouTube/>,
-  document.getElementById("yt")
+  document.getElementById("yt"))
