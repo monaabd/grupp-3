@@ -1,54 +1,47 @@
 
-#catTable {
-    display: flex;
-    flex-direction:column;
-    text-align: center;
+/* ===== weather ===== */
+#weatherImg {
+     width: 45%;
+     padding: 10px;
+     margin-left: 8%;
+     background-color: aqua;
+     border-style: groove;
+     border-radius: 10px;
+}
+
+#weatherIcon {
+    width:20%;
+    display: inline;
+    background-color: aqua;
+    border-style: groove;
     border-radius: 10px;
-    border: 1px solid black;
+    
+    
     
 }
 
-
- tr > td {
-     
-    padding: 10px;
-    background-color:lightcoral;
-    width: 17%;
-    border-radius: 10px;
-    border: 1px solid black;
-}
-
-td:last-child {
-    width: 32.4%;
-    height:17%; 
-    border-radius: 10px;
-}
-
-
-th  {
-     
-    width: 12.5%;
-    background-color: mediumaquamarine;
-    border: 1px solid black; 
-    padding: 10px; 
-    border-radius: 10px;
-    
-}
-
-.inputClass {
-  width:100%;
-   font-size:0.55em;   
-}
-td > img {
-
-    width: 40%;
-   
-} 
- span > #weatherResult {
+span > #weatherResult {
+    width:15%;
     color: orangered;
     font-weight: bolder;
-      display: inline-block;
+    display: inline;
+    font-size:1.5em; 
+    background-color: aqua;
+    border-style: groove;
+    border-radius: 10px;
+    
+    
+     
 }
+
+#weatherIcon:hover  {
+    width:30% ;
+    
+}
+
+
+/* ===== animationIcon ===== */
+
 #animationIcon {
     background: white;
     border-radius: 10px;
@@ -75,8 +68,61 @@ td > img {
     to {left: 950px;}
 }
 
+/* ===== Cat table ===== */
 
-@media (min-width: 260px) and (max-width:600px) {
+
+#catTable {
+    display: flex;
+    flex-direction:column;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid black;
+    
+}
+
+
+ tr > td {
+     
+    padding: 10px;
+    background-color:lightcoral;
+    width: 17%;
+     height:12% ;
+    border-radius: 10px;
+    border: 1px solid black;
+    
+}
+
+
+td:last-child {
+    width: 32.4%;
+    height:14%; 
+    border-radius: 10px;
+}
+
+
+th  {
+     
+    width: 12.5%;
+    background-color: mediumaquamarine;
+    border: 1px solid black; 
+    padding: 10px; 
+    border-radius: 10px;
+    
+}
+
+.inputClass {
+  width:100%;
+   font-size:0.80em;   
+}
+td > img {
+
+    width: 40%;
+   
+} 
+ 
+
+/* ===== media ===== */
+@media (min-width: 260px) and (max-width:700px) {
      #animation > img {
     animation: mymove 2s infinite;
     animation-iteration-count:0;
@@ -86,9 +132,21 @@ td > img {
     from {left: 0px;}
     to {left: 100px;}
 }
+    #animationIcon{
+        background-color: transparent;
+        
+    }   
+    span > #weatherResult {
+    display:inline-block;
+     font-size-adjust: auto;   
+    padding-right:17%; 
+    margin-right: -5%;
+    margin-left:6%;        
+}
+  
 }
 
-
+ 
 
 
 
