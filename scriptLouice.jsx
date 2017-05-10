@@ -41,10 +41,9 @@ class CatFact extends React.Component {
   render() {
     return(
       <div id="facts">
-        <h2>Wanna know some cool facts about cats?</h2>
-        <p id="newFact">{this.props.currentFact}</p>
-        <br/><br/>
-        <button id="factBtn" onClick={this.props.handleClick}>Show another fact</button>
+        <h3>Facts</h3>
+        <button onClick={this.props.handleClick}>Show something else</button>
+        <p>{this.props.currentFact}</p>
       </div>
     )
   }
@@ -128,9 +127,9 @@ class AdminBtn extends React.Component {
     return(
       <div>
         {isLoggedIn ? (
-          <button id="adminLoginBtn" onClick={this.props.handleClickLogOut}>Log out</button>
+          <button onClick={this.props.handleClickLogOut}>Log Out</button>
         ) : (
-          <button id="adminLoginBtn" onClick={this.props.handleClickLogin}>Admin login</button>
+          <button onClick={this.props.handleClickLogin}>Admin Log In</button>
         )}
       </div>
       
