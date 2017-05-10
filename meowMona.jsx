@@ -197,7 +197,7 @@ class App extends React.Component {
              onChange={this.props.setCat} />
              </th>
                <th>
-              <button type="button" 
+              <button type="button" id="addCatBtn" 
                onClick={this.props.buttonClick}> Add cat</button>
              </th>
 
