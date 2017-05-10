@@ -50,7 +50,7 @@
             
             return (<div>
                     <span><img id="weatherImg" src="pictures/catweather.jpg" /><br/>
-                        <span id="weatherResult"> {this.state.weather.description} </span> <img src={this.state.iconURL}/></span>
+                        <span id="weatherResult"> {this.state.weather.description} </span> <img id="weatherIcon" src={this.state.iconURL}/></span>
                     </div>
 
 			);

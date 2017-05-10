@@ -1,4 +1,76 @@
 
+/* ===== weather ===== */
+#weatherImg {
+     width: 45%;
+     padding: 10px;
+     margin-left: 8%;
+     background-color: aqua;
+     border-style: groove;
+     border-radius: 10px;
+}
+
+#weatherIcon {
+    width:20%;
+    display: inline;
+    background-color: aqua;
+    border-style: groove;
+    border-radius: 10px;
+    
+    
+    
+}
+
+span > #weatherResult {
+    width:15%;
+    color: orangered;
+    font-weight: bolder;
+    display: inline;
+    font-size:1.5em; 
+    background-color: aqua;
+    border-style: groove;
+    border-radius: 10px;
+    
+    
+     
+}
+
+#weatherIcon:hover  {
+    width:30% ;
+    
+}
+
+
+/* ===== animationIcon ===== */
+
+#animationIcon {
+    background: white;
+    border-radius: 10px;
+}
+  
+#animationIcon > img{
+    width:170px;
+    height: 170px;
+    position: relative;
+    -webkit-animation: mymove 20s infinite; /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count: 2; /* Safari 4.0 - 8.0 */
+    animation: mymove 20s infinite;
+    animation-iteration-count: 2;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes mymove {
+    from {left: 0px;}
+    to {left: 950px;}
+}
+
+@keyframes mymove {
+    from {left: 0px;}
+    to {left: 950px;}
+}
+
+/* ===== Cat table ===== */
+
+
 #catTable {
     display: flex;
     flex-direction:column;
@@ -47,38 +119,9 @@ td > img {
     width: 40%;
    
 } 
- span > #weatherResult {
-    color: orangered;
-    font-weight: bolder;
-      display: inline-block;
-}
-#animationIcon {
-    background: white;
-    border-radius: 10px;
-}
-  
-#animationIcon > img{
-    width:170px;
-    height: 170px;
-    position: relative;
-    -webkit-animation: mymove 20s infinite; /* Safari 4.0 - 8.0 */
-    -webkit-animation-iteration-count: 2; /* Safari 4.0 - 8.0 */
-    animation: mymove 20s infinite;
-    animation-iteration-count: 2;
-}
+ 
 
-/* Safari 4.0 - 8.0 */
-@-webkit-keyframes mymove {
-    from {left: 0px;}
-    to {left: 950px;}
-}
-
-@keyframes mymove {
-    from {left: 0px;}
-    to {left: 950px;}
-}
-
-
+/* ===== media ===== */
 @media (min-width: 260px) and (max-width:700px) {
      #animation > img {
     animation: mymove 2s infinite;
@@ -91,18 +134,19 @@ td > img {
 }
     #animationIcon{
         background-color: transparent;
+        
     }   
     span > #weatherResult {
-    font-size:1.5em;
+    display:inline-block;
+     font-size-adjust: auto;   
+    padding-right:17%; 
+    margin-right: -5%;
+    margin-left:6%;        
 }
-    
+  
 }
 
-#weatherImg {
-    width: 45%;
-}
-
-
+ 
 
 
 
