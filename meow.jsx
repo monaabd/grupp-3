@@ -149,20 +149,14 @@ class YouTube extends React.Component{
     
     this.state = {
       source: "https://www.youtube.com/embed/",
-<<<<<<< HEAD
       videos: [],
-      id: ""
-=======
-      //query: "",
-      videos: []
->>>>>>> 7bb37ec49deaa93e30f663d7b81ea5e3f4bc0ec8
+      id: "",
     }
     this.showPlay = this.showPlay.bind(this);
     this.showFeed = this.showFeed.bind(this);
     this.showTrain = this.showTrain.bind(this);
    
   }
-<<<<<<< HEAD
     
   
   showPlay(event){
@@ -172,26 +166,16 @@ class YouTube extends React.Component{
         url += "&key=AIzaSyAx0VK9xWs4v-gREmhfa1vlUXI_RUtcLaI";
     
     console.log("URL: " + url);
-=======
 
-  showPlay(event){
-    let ajax = new XMLHttpRequest();
-    let url = "https://www.googleapis.com/youtube/v3/search?part=snippet";
-        url += "&key=AIzaSyAx0VK9xWs4v-gREmhfa1vlUXI_RUtcLaI";
-        url += "&q=play+with+your+cat";
->>>>>>> 7bb37ec49deaa93e30f663d7b81ea5e3f4bc0ec8
     ajax.open("GET", url);
     ajax.onreadystatechange = (function(event) {
 
       if(ajax.readyState == 4 && ajax.status == 200 ){
         console.log("Success!");
         let data = JSON.parse(ajax.responseText);
-<<<<<<< HEAD
-        
-=======
+
         console.log(data);
         //console.log(ajax.responseText);
->>>>>>> 7bb37ec49deaa93e30f663d7b81ea5e3f4bc0ec8
         let videos = data.items;
         console.log(videos);
         let mappedVideos = videos.map(function(video) {
@@ -199,29 +183,21 @@ class YouTube extends React.Component{
         });
         console.log("Mapped Vids: ",mappedVideos);
         this.setState({
-<<<<<<< HEAD
+
           videos: mappedVideos
         });
-=======
-          videos: videos
-          //query: "&q=play+with+your+cat"
-        })
->>>>>>> 7bb37ec49deaa93e30f663d7b81ea5e3f4bc0ec8
-      }
-    }).bind(this);
+
+        }
+      }).bind(this);
     ajax.send();
   }
 
   showFeed(event){
     let ajax = new XMLHttpRequest();
-<<<<<<< HEAD
+
     let url  = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=feed+your+cat";
         url += "&key=AIzaSyAx0VK9xWs4v-gREmhfa1vlUXI_RUtcLaI";
-=======
-    let url = "https://www.googleapis.com/youtube/v3/search?part=snippet";
-        url += "&key=AIzaSyAx0VK9xWs4v-gREmhfa1vlUXI_RUtcLaI";
-        url += "&q=feed+your+cat";
->>>>>>> 7bb37ec49deaa93e30f663d7b81ea5e3f4bc0ec8
+
     ajax.open("GET", url);
     ajax.onreadystatechange = (function(event) {
 
@@ -235,12 +211,7 @@ class YouTube extends React.Component{
                                                                
         console.log("Data.items: ", data.items);
         this.setState({
-<<<<<<< HEAD
           videos: mappedVideos
-=======
-          videos: videos
-          //query: "&q=feed+your+cat"
->>>>>>> 7bb37ec49deaa93e30f663d7b81ea5e3f4bc0ec8
         })
       }
     }).bind(this);
@@ -249,14 +220,9 @@ class YouTube extends React.Component{
 
   showTrain(event){
     let ajax = new XMLHttpRequest();
-<<<<<<< HEAD
     let url  = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=train+your+cat";
         url += "&key=AIzaSyAx0VK9xWs4v-gREmhfa1vlUXI_RUtcLaI";
-=======
-    let url = "https://www.googleapis.com/youtube/v3/search?part=snippet";
-        url += "&key=AIzaSyAx0VK9xWs4v-gREmhfa1vlUXI_RUtcLaI";
-        url += "&q=train+your+cat";
->>>>>>> 7bb37ec49deaa93e30f663d7b81ea5e3f4bc0ec8
+
     ajax.open("GET", url);
     ajax.onreadystatechange = (function(event) {
 
@@ -265,7 +231,6 @@ class YouTube extends React.Component{
 
         let videos = data.items;
         console.log(videos);
-<<<<<<< HEAD
         let mappedVideos = videos.map(function(video) {
           return {id: video.id.videoId}
         });
@@ -273,58 +238,33 @@ class YouTube extends React.Component{
         this.setState({
           videos: mappedVideos
         });
-=======
-        this.setState({
-          videos: videos
-          //query: "&q=train+your+cat"
-        })
->>>>>>> 7bb37ec49deaa93e30f663d7b81ea5e3f4bc0ec8
       }
     }).bind(this);
     ajax.send();
   }
-  
-<<<<<<< HEAD
-  
+    
 render() {
   console.log('render: state', this.state);
   
   if (this.state.videos.length >= 1){
-=======
-  render() {
->>>>>>> 7bb37ec49deaa93e30f663d7b81ea5e3f4bc0ec8
+
     return(
       <div>
-        <Buttons 
-          handlePlay={this.showPlay} 
-          handleFeed={this.showFeed} 
-          handlePlay={this.showPlay}/>
-        
-<<<<<<< HEAD
       {/*<button id="play" onClick={this.showPlay}>Play with your cat</button>
         <button id="feed" onClick={this.showFeed}>Feed your cat</button>
       <button id="train" onClick={this.showTrain}>Train your cat</button>*/}
 
       <Video 
-=======
-        <Video 
->>>>>>> 7bb37ec49deaa93e30f663d7b81ea5e3f4bc0ec8
         source={this.state.source}
         id={this.state.videos[0].id}
         />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <Video 
-<<<<<<< HEAD
         source={this.state.source}
         id={this.state.videos[1].id}
-=======
-          source={this.state.source}
-          videoId={this.state.videos[1].id.videoId}
->>>>>>> 7bb37ec49deaa93e30f663d7b81ea5e3f4bc0ec8
         />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <Video 
-<<<<<<< HEAD
         source={this.state.source}
         id={this.state.videos[2].id}
         />
@@ -339,28 +279,9 @@ render() {
       <button id="train" onClick={this.showTrain}>Train your cat</button>*/}
       </div>
         )
-    }
-=======
-          source={this.state.source}
-          videoId={this.state.videos[2].id.videoId}
-        />
-      </div>
-    )
+    }    
   }
-}
 
-class Buttons extends React.Component {
-  render() {
-    return(
-      <div>
-        <button className="play" onClick={this.props.handlePlay}>Play with your cat</button>
-        <button className="feed" onClick={this.props.handleFeed}>Feed your cat</button>
-        <button className="train" onClick={this.props.handleTrain}>Train your cat</button>
-      </div>
-    )
-  }
->>>>>>> 7bb37ec49deaa93e30f663d7b81ea5e3f4bc0ec8
-}
 
 class Video extends React.Component {
   render(){
@@ -369,15 +290,10 @@ class Video extends React.Component {
       <iframe 
         width="320" 
         height="240" 
-<<<<<<< HEAD
         className="play" 
         src={this.props.source + this.props.id}
         frameBorder="0" />
-=======
-        class="play" 
-        src={this.props.source + this.props.videoId}
-        frameborder="0" />
->>>>>>> 7bb37ec49deaa93e30f663d7b81ea5e3f4bc0ec8
+
     )
   }
 }
@@ -386,8 +302,3 @@ class Video extends React.Component {
 ReactDOM.render(
     <YouTube/>,
   document.getElementById("yt")
-<<<<<<< HEAD
-)    
-=======
-)
->>>>>>> 7bb37ec49deaa93e30f663d7b81ea5e3f4bc0ec8
