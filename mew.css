@@ -1,7 +1,6 @@
 
 /* ===== weather ===== */
 
-
 #weatherIcon {
     width:50%;
     display: inline-block;
@@ -103,8 +102,8 @@ th  {
 }
 td > img {
     width: 40%; 
-} 
- 
+}
+
 
 /* ===== media ===== */
 @media (min-width:160px) and (max-width:700px) {
@@ -124,6 +123,9 @@ td > img {
   tr > td {
      
     padding: 4px;
+}
+    .inputClass {
+   font-size:0.51em;   
 }
 
 }
