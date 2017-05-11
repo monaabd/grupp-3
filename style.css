@@ -1,7 +1,7 @@
 /* ===== General ===== */
 #body {
   margin: 0;
-  background-image: url(pictures/cats.png);
+  background-image: url(pictures/00000073.jpg);
   /*border: 1px solid black;*/
   display: flex;
   flex-direction: column;
@@ -48,7 +48,7 @@
 
 #weather span {
   padding: 10px;
-  color: darkblue;
+  color: withe;
  text-align: center;
   width:auto;    
 }

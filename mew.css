@@ -15,9 +15,8 @@
     font-weight: bolder;
     display: inline-block;
     font-size:1.5em; 
-    background-color: aqua;
-    border-style: groove;
-    border-radius: 10px;
+    background-color:#48172D;
+    border-radius: 40%;
     
     
      
@@ -27,19 +26,26 @@
 /* ===== animationIcon ===== */
 
 #animationIcon {
-    background: white;
-    border-radius: 10px;
+    background: transparent;
+    
+    
 }
   
 #animationIcon > img{
-    width:170px;
-    height: 170px;
+    width:140px;
+    height: 140px;
     position: relative;
     -webkit-animation: mymove 20s infinite; /* Safari 4.0 - 8.0 */
     -webkit-animation-iteration-count: 2; /* Safari 4.0 - 8.0 */
     animation: mymove 20s infinite;
     animation-iteration-count: 2;
+    border-radius: 50%;
+    transition: width 2s, height 4s;
 }
+  #animationIcon > img:hover { 
+    width: 200px;
+    height: 200px;  }
+
 
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes mymove {
@@ -68,10 +74,10 @@
  tr > td {
      
     padding: 10px;
-    background-color:lightcoral;
+    background-color:#62997A;
     width: 17%;
      height:12% ;
-    border-radius: 10px;
+    border-radius: 80%;
     border: 1px solid black;
     
 }
@@ -99,14 +105,12 @@ th  {
    font-size:0.80em;   
 }
 td > img {
-
-    width: 40%;
-   
+    width: 40%; 
 } 
  
 
 /* ===== media ===== */
-@media (min-width: 260px) and (max-width:700px) {
+@media (min-width:160px) and (max-width:700px) {
      #animation > img {
     animation: mymove 2s infinite;
     animation-iteration-count:0;
@@ -117,14 +121,15 @@ td > img {
     to {left: 100px;}
 }
     #animationIcon{
-        background-color: transparent;
-        
+        background-color: transparent;  
     }   
  
-  
+  tr > td {
+     
+    padding: 4px;
 }
 
- 
+}
 
 
 
