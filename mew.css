@@ -1,30 +1,19 @@
 
 /* ===== weather ===== */
-#weatherImg {
-     width: 45%;
-     padding: 10px;
-     margin-left: 8%;
-     background-color: aqua;
-     border-style: groove;
-     border-radius: 10px;
-}
+
 
 #weatherIcon {
-    width:20%;
-    display: inline;
-    background-color: aqua;
-    border-style: groove;
-    border-radius: 10px;
+    width:30%;
+    display: inline-block;
     
-    
-    
+     
 }
 
-span > #weatherResult {
+ #weatherResult {
     width:15%;
     color: orangered;
     font-weight: bolder;
-    display: inline;
+    display: inline-block;
     font-size:1.5em; 
     background-color: aqua;
     border-style: groove;
@@ -32,11 +21,6 @@ span > #weatherResult {
     
     
      
-}
-
-#weatherIcon:hover  {
-    width:30% ;
-    
 }
 
 
@@ -136,13 +120,7 @@ td > img {
         background-color: transparent;
         
     }   
-    span > #weatherResult {
-    display:inline-block;
-     font-size-adjust: auto;   
-    padding-right:17%; 
-    margin-right: -5%;
-    margin-left:6%;        
-}
+ 
   
 }
 
