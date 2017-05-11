@@ -3,25 +3,22 @@
 
 
 #weatherIcon {
-    width:30%;
+    width:50%;
     display: inline-block;
     
-     
 }
 
  #weatherResult {
-    width:15%;
-    color: orangered;
+    
+    color: white;
     font-weight: bolder;
     display: inline-block;
     font-size:1.5em; 
-    background-color:#48172D;
-    border-radius: 40%;
-    
-    
-     
+    background-color:pink;
+    border-radius: 50%;
+    padding:10%; 
 }
-
+  
 
 /* ===== animationIcon ===== */
 
@@ -65,8 +62,7 @@
     display: flex;
     flex-direction:column;
     text-align: center;
-    border-radius: 10px;
-    border: 1px solid black;
+   
     
 }
 
