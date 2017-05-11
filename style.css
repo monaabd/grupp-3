@@ -10,6 +10,7 @@
   color: white;
   width: 100%;
   min-width: 417px;
+  background-size: cover;
 }
 #body > div {
   width: 90%;
