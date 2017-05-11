@@ -1,8 +1,8 @@
 /* ===== General ===== */
 #body {
   margin: 0;
-  background-image: url(pictures/cats.png);
-  /*border: 1px solid black;*/
+  /*background-image: url(pictures/cats.png);
+  border: 1px solid black;*/
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,9 +21,24 @@
 }
 
 #header{
-  background-color: darkblue;
-  text-align: center;    
+  display: flex;
+  flex-direction: row;
+  background-image: url(pictures/Catnip-Logo.png);
+  background-repeat: no-repeat; 
+  background-size: 180px 160px;
+  background-position: 5%;
+  color: black;
+  padding-top: 20px;
+  height: 200px;
+  width: 100px;
 }
+
+h1 {
+  margin-top: 3%;
+  margin-left: 40%;
+  font-size: 4em;
+}
+
 #body > div:nth-child(2) {
   display: flex;
   flex-direction: row;
@@ -56,8 +71,8 @@
 
 /* ===== Cat Facts ===== */
 #facts {
-  border: 1px solid #61c13c;
-  background-color: #61c13c;
+  border: 1px solid #48172D;
+  background-color: #48172D;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -109,6 +124,15 @@
   height: 240px;
 }
 
+#playBtn {
+  font-family: Love Ya Like A Sister;
+  color: white;
+  font-size: 20px;
+  background: #48172D;
+  padding: 5px 7px 5px 9px;
+  margin-top: 30px;
+}
+
 /*   se saras css   */
 
 /* ===== Lists ===== */
@@ -138,3 +162,24 @@ button:hover {
     width: 100px;
   }
 }
+
+/*Me & Meow-text header*/
+@media (max-width: 360px){
+  h1{
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 412px){
+  h1{
+    margin-left: 60%;
+  }
+}
+
+/*
+@media (min-width: 768px){
+  #header {
+    height: 180px;
+  margin: auto;
+  }
+}*/

@@ -41,9 +41,9 @@ class CatFact extends React.Component {
   render() {
     return(
       <div id="facts">
-        <h3>Facts</h3>
-        <button onClick={this.props.handleClick}>Show something else</button>
+        <h3>Wanna know some cool facts about cats?</h3>
         <p>{this.props.currentFact}</p>
+        <button id="factBtn" onClick={this.props.handleClick}>Show something else</button>
       </div>
     )
   }
@@ -144,10 +144,6 @@ class ColorBtns extends React.Component {
       <div>
         {isLoggedIn ? (
           <div>
-            <button>Red</button>
-            <button>Blue</button>
-            <button>Yellow</button>
-            <button>Green</button>
           </div>
         ) : (
           null
