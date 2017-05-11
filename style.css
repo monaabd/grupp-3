@@ -1,7 +1,7 @@
 /* ===== General ===== */
 #body {
   margin: 0;
-  background-image: url(pictures/black-cat.jpg);
+  background-image: url(pictures/paws.jpg);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,7 +10,6 @@
   color: white;
   width: 100%;
   min-width: 417px;
-  background-size: cover;
 }
 #body > div {
   width: 90%;
@@ -24,10 +23,12 @@
   display: flex;
   flex-direction: row;
   background-image: url(pictures/Catnip-Logo.png);
+  background-color: white;
+  opacity: 0.9;
   background-repeat: no-repeat; 
   background-size: 180px 160px;
   background-position: 5%;
-  color: black;
+  color: #6F2345;
   padding-top: 20px;
   height: 200px;
   width: 100px;
@@ -72,20 +73,25 @@ h1 {
 
 /* ===== Cat Facts ===== */
 #facts {
-  border: 1px solid #48172D;
-  background-color: #48172D;
+  border: 1px solid #6F2345;
+  background-color: #6F2345;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
 }
 #facts > button {
-  border: 1px solid orange;
-  background-color: gold;
-  padding: 10px;
+  background: #FBAB18;
+  padding: 5px 7px 7px 9px;
   width: auto;
   font-family: 'Love Ya Like A Sister', cursive;
 }
+
+#facts > button:hover {
+  background: #facb7b;
+  text-decoration: none;
+}
+
 #facts > p {
   text-align: center;
   padding: 10px;
@@ -115,11 +121,7 @@ h1 {
   border: 1px dotted orange;
   width: auto;
 }
-#yt > div > button {
-  border: none;
-  border-radius: 3px;
-  padding: 2;
-}
+
 #yt img {
   width: 320px;
   height: 240px;
@@ -129,9 +131,14 @@ h1 {
   font-family: Love Ya Like A Sister;
   color: white;
   font-size: 20px;
-  background: #48172D;
+  background: #6F2345;
   padding: 5px 7px 5px 9px;
   margin-top: 30px;
+}
+
+#playBtn:hover {
+  background: #48172D;
+  text-decoration: none;
 }
 
 /*   se saras css   */
@@ -165,17 +172,12 @@ button:hover {
 }
 
 /*Me & Meow-text header*/
-@media (max-width: 360px){
+@media (max-width: 415px){
   h1{
     visibility: hidden;
   }
 }
 
-@media (max-width: 412px){
-  h1{
-    margin-left: 60%;
-  }
-}
 
 /*
 @media (min-width: 768px){
