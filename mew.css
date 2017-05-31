@@ -4,42 +4,52 @@
 #weatherIcon {
     width:50%;
     display: inline-block;
-    
+
 }
 
 
  #weatherResult {
-    
     color: white;
     font-weight: bolder;
     display: inline-block;
-    font-size:1.5em; 
+    font-size:1.5em;
     background-color:pink;
     border-radius: 50%;
-    padding:10%; 
+    padding:10%;
+     position: relative;
+    animation:mymovetest 15s 1 alternate;
+    transition: width 2s, height 2s;
 }
-  
+@keyframes mymovetest{
+   0%, 100% {
+  left: 300px;
+  }
+  50% {
+   left: 50px;
+  }
+
+}
+
+
 
 /* ===== animationIcon ===== */
 
 #animationIcon {
     background: transparent;
-    
-    
+
+
 }
-  
+
 #animationIcon > img{
     width:140px;
     height: 140px;
     position: relative;
-    -webkit-animation: mymove 20s infinite; /* Safari 4.0 - 8.0 */
-    -webkit-animation-iteration-count: 2; /* Safari 4.0 - 8.0 */
-    animation: mymove 20s infinite;
-    animation-iteration-count: 2;
+    animation: mymove 20s 2;
+    -webkit-animation: mymove 20s 2; /* Safari 4.0 - 8.0 */
     border-radius: 50%;
     transition: width 2s, height 4s;
 }
-  #animationIcon > img:hover { 
+  #animationIcon > img:hover {
     width: 200px;
     height: 200px;  }
 
@@ -62,46 +72,57 @@
     display: flex;
     flex-direction:column;
     text-align: center;
-   
-    
+
+
 }
 
 
  tr > td {
-     
+
     padding: 10px;
     background-color:#62997A;
     width: 17%;
      height:12% ;
     border-radius: 80%;
     border: 1px solid black;
-    
+    animation:mymoveTdLast 3s 2 alternate;
 }
 
 
 td:last-child {
     width: 32.4%;
-    height:14%; 
+    height:14%;
     border-radius: 10px;
+    position: relative;
+    animation: mymoveTdLast 3s 3 alternate;
+    transition: width 2s, height 4s;
 }
 
+@keyframes mymoveTdLast {
+    from{transform: rotate(0deg); background-color:aqua;}
+    to {transform: rotate(180deg); background-color:salmon;}
+
+   from { top: 0; right: 50%; }
+  to   { right: 50%; top:50%; }
+
+}
 
 th  {
-     
+
     width: 12.5%;
     background-color: mediumaquamarine;
-    border: 1px solid black; 
-    padding: 10px; 
+    border: 1px solid black;
+    padding: 10px;
     border-radius: 10px;
-    
+
 }
 
 .inputClass {
   width:100%;
-   font-size:0.80em;   
+   font-size:0.80em;
 }
 td > img {
-    width: 40%; 
+    width: 40%;
 }
 
 
@@ -110,31 +131,22 @@ td > img {
      #animation > img {
     animation: mymove 2s infinite;
     animation-iteration-count:0;
-      
+
   }
 @keyframes mymove {
     from {left: 0px;}
     to {left: 100px;}
 }
     #animationIcon{
-        background-color: transparent;  
-    }   
- 
+        background-color: transparent;
+    }
+
   tr > td {
-     
+
     padding: 4px;
 }
     .inputClass {
-   font-size:0.51em;   
+   font-size:0.51em;
 }
 
 }
-
-
-
-
-
-
-
-
-
