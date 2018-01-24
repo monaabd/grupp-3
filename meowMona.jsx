@@ -1,3 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 function getDataFromFirebase(updateCatsData) {
     //  firebase.database().ref('countries/').off('value')
         firebase.database().ref('cats/').on('value', function(snapshot) {
