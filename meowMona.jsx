@@ -4,34 +4,34 @@ function getDataFromFirebase(updateCatsData) {
             let data = snapshot.val();
             console.log('Firebase data: ', data);
             updateCatsData(data);
-            
-           
+
+
    });//firebase
  }
 
 
 class App extends React.Component {
-  constructor(props){  
+  constructor(props){
     super(props);
-      
+
     this.state={
       submitter:null,
       catName: null,
       catColor: null,
       catBreed: null,
-      catPhoto:null,  
-       
-       
+      catPhoto:null,
+
+
       cats:{
-        
+
       }
-    
+
   };
     this.updateCatsData = this.updateCatsData.bind(this);
     this.setCat=this.setCat.bind(this);
     this.addNewObject=this.addNewObject.bind(this);
   }
-    
+
   componentDidMount() {
             getDataFromFirebase(this.updateCatsData);
         }
@@ -41,16 +41,16 @@ class App extends React.Component {
                   cats: data
               });
       }
-    
+
   setCat(event){
-   
+
      var el = event.target; // input elementet
     if (el.placeholder == "My Name")
       this.setState({ submitter: el.value });
     else if (el.placeholder == "Cat Name")
-      this.setState({ catName: el.value });  
+      this.setState({ catName: el.value });
     else if (el.placeholder == "Cat Color")
-      this.setState({ catColor: el.value }); 
+      this.setState({ catColor: el.value });
     else if (el.placeholder == "Cat Breed")
       this.setState({ catBreed: el.value });
       else (el.placeholder == "Photo URL")
@@ -61,31 +61,31 @@ class App extends React.Component {
 
     return (  <table id="catTable">
 
-           
-              <AddCats setCat={this.setCat} buttonClick= 
-                            {this.addNewObject}/> 
-              <MyList theList={this.state.cats} />
-                  
 
-            </table> 
+              <AddCats setCat={this.setCat} buttonClick=
+                            {this.addNewObject}/>
+              <MyList theList={this.state.cats} />
+
+
+            </table>
 
          );
   }//render
-  
+
 
   addNewObject(event) {
      var newCats = this.state.cats;
      var catList=Object.keys(newCats);
       var listItems=catList.map(prop=>{
-       let itemObj=newCats[prop];   
+       let itemObj=newCats[prop];
       })
      listItems.push({
-        submitter:this.state.submitter,  
+        submitter:this.state.submitter,
         catName: this.state.catName,
         catColor: this.state.catColor,
         catBreed: this.state.catBreed,
          catPhoto:this.state.catPhoto,
-        
+
       });
 
       this.setState ({
@@ -93,12 +93,12 @@ class App extends React.Component {
           //uniqueId: this.state.uniqueId
       });
       firebase.database().ref('cats/').push({
-        submitter:this.state.submitter,  
+        submitter:this.state.submitter,
         catName: this.state.catName,
         catColor: this.state.catColor,
         catBreed: this.state.catBreed,
-        catPhoto:this.state.catPhoto,  
-        //id:this.state.id  
+        catPhoto:this.state.catPhoto,
+        //id:this.state.id
       });
      // console.log(this.state.cats);
   }//addnewobj
@@ -128,23 +128,23 @@ class App extends React.Component {
          var theListprop = Object.keys(theListObj); // Array: [key/prop=oneCat, anothercat, ...]
          //console.log(theListKeys, "listkey");
          var listItems = theListprop.map(prop=> {
-             
+
           let itemObj = theListObj[prop]; // Object: oneCat: {...}
           //let itemProps = Object.keys(itemObj);// each properties in oneCat
-          
+
              // id={itemObj.id}
              //var keyItem=itemObj.snabshot.key;
              //console.log(key);
            return <tr key={itemObj.catPhoto}>
-        
+
                  <td>{itemObj.submitter + "  "}</td>
                  <td>{itemObj.catName + "  "}</td>
                  <td>{itemObj.catColor+ " "}</td>
                  <td>{itemObj.catBreed+ ""}</td>
-                 <td><img src={itemObj.catPhoto}/></td> 
+                 <td><img src={itemObj.catPhoto}/></td>
 
-               </tr> 
-           
+               </tr>
+
          });
          return <tbody>
                {listItems}
@@ -154,7 +154,7 @@ class App extends React.Component {
    }//MyListcomp
 
      class AddCats extends React.Component {
-         
+
         constructor(props) {
           super(props);
 
@@ -162,49 +162,49 @@ class App extends React.Component {
        render(){
 
          return (
-         <thead>     
+         <thead>
           <tr>
             <th>
-            <input className="inputClass"  
+            <input className="inputClass"
              type="text"
              placeholder="My Name"
-             onChange={this.props.setCat} /> 
+             onChange={this.props.setCat} />
              </th>
              <th>
            <input className="inputClass"
-              
+
              type="text"
              placeholder="Cat Name"
-             onChange={this.props.setCat} /> 
+             onChange={this.props.setCat} />
              </th>
              <th>
              <input className="inputClass"
-              
+
              type="text"
              placeholder="Cat Color"
-             onChange={this.props.setCat} /> 
-             </th> 
+             onChange={this.props.setCat} />
+             </th>
           <th>
            <input className="inputClass"
              type="text"
              placeholder="Cat Breed"
              onChange={this.props.setCat} />
           </th>
-             <th>     
+             <th>
              <input className="inputClass"
              type="src"
              placeholder="Photo URL"
              onChange={this.props.setCat} />
              </th>
                <th>
-              <button type="button" 
+              <button type="button"
                onClick={this.props.buttonClick}> Add cat</button>
              </th>
 
               </tr>
             </thead>);
 
-            
+
        }//render
 
        }//inputcomp
